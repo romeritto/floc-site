@@ -1,7 +1,7 @@
 # Workflow specific
 .DS_Store
 *.sublime-workspace
-
+media/
 
 # General (https://github.com/django/django/blob/master/.gitignore)
 *.egg-info
@@ -18,3 +18,4 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
+*.sqlite3
