@@ -7,12 +7,18 @@ from actors.managers import ActorManager
 class Actor(models.Model):
     user = models.OneToOneField(
         User,
-        verbose_name=u"používateľ",
+        verbose_name=u'používateľ',
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    jobs = models.CharField(
+        verbose_name=u'Úlohy',
+        help_text=u'Vymenujte úlohy daného človeka. Napr. Režisér a herec',
+        max_length=255,
+        default=u'Herec',
+    )
     bio = models.TextField(
-        verbose_name=u"biografia",
+        verbose_name=u'biografia',
         help_text=u'Popis herca.',
     )
     photo = models.ImageField(
@@ -28,8 +34,8 @@ class Actor(models.Model):
     objects = ActorManager()
 
     class Meta:
-        verbose_name = u'herec'
-        verbose_name_plural = u'herci'
+        verbose_name = u'Herec'
+        verbose_name_plural = u'Herci'
 
         ordering = ['-user']
 
@@ -39,3 +45,7 @@ class Actor(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    def save(self, *args, **kwargs):
+        self.user.save()
+        return super().save(*args, **kwargs)

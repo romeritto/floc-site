@@ -41,10 +41,13 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'django_reverse_admin',
+    'chunks',
 ]
 
 LOCAL_APPS = [
     'actors.apps.ActorsConfig',
+    'plays.apps.PlaysConfig',
+    'shows.apps.ShowsConfig',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS

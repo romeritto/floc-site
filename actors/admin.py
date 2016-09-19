@@ -5,15 +5,12 @@ from django_reverse_admin import ReverseModelAdmin
 from .models import Actor
 
 
-class UserInline(admin.StackedInline):
-    model = User
-    fields = ['first_name', 'last_name', 'email', ]
+class ActorModelAdmin(ReverseModelAdmin):
 
-
-class ActorAdmin(ReverseModelAdmin):
     inline_type = 'tabular'
     inline_reverse = [
         ('user', {'fields': ['username', 'first_name', 'last_name', 'email']}),
     ]
+    fields = ['bio', 'jobs', 'photo']
 
-admin.site.register(Actor, ActorAdmin)
+admin.site.register(Actor, ActorModelAdmin)
