@@ -48,6 +48,7 @@ LOCAL_APPS = [
     'actors.apps.ActorsConfig',
     'plays.apps.PlaysConfig',
     'shows.apps.ShowsConfig',
+    'blog.apps.BlogConfig',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
