@@ -42,6 +42,7 @@ DEFAULT_APPS = [
 THIRD_PARTY_APPS = [
     'django_reverse_admin',
     'chunks',
+    'tinymce',
 ]
 
 LOCAL_APPS = [
@@ -132,3 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'mode': 'exact',
+    'theme': 'advanced',
+    'height': 500,
+    'plugins': 'preview,media,paste,fullscreen,visualchars',
+    'theme_advanced_buttons1': 'fullscreen,|,bold,italic,underline,strikethrough,bullist,numlist,|,formatselect,removeformat',
+    'theme_advanced_buttons2': 'pasteword,|,undo,redo,|,link,unlink,|,image,media,charmap,|,visualchars,preview,code',
+    'theme_advanced_toolbar_location': 'top',
+    'theme_advanced_toolbar_align': 'center',
+    'content_css': '/media/css/tinymce.css',
+    'extended_valid_elements': 'noindex',
+    'custom_elements': 'noindex',
+}

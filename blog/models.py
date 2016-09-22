@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
+from tinymce.models import HTMLField
+
 from plays.models import Play
 from actors.models import Actor
 
@@ -27,7 +29,7 @@ class Blogpost(models.Model):
         help_text=u'Použite úvodné 2-3 vety z článku.',
         max_length=255,
     )
-    body = models.TextField(verbose_name=u'obsah')
+    body = HTMLField(verbose_name=u'obsah')
     posted = models.DateTimeField(
         verbose_name=u'čas pridania',
         db_index=True,
