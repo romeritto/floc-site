@@ -2,6 +2,7 @@
 .DS_Store
 *.sublime-workspace
 media/
+static-collect/
 
 # General (https://github.com/django/django/blob/master/.gitignore)
 *.egg-info
