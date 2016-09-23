@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,7 +43,6 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'django_reverse_admin',
-    'chunks',
     'tinymce',
 ]
 
@@ -66,11 +67,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'floc.urls'
 
+# Templates
+# Uses the built-in template engine only for admin
+# Jinja2 for everything else
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -79,7 +84,16 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
     },
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [os.path.join(BASE_DIR, 'templates/'), ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': 'jinja2_env.environment',
+        }
+    }
 ]
 
 WSGI_APPLICATION = 'floc.wsgi.application'
@@ -132,15 +146,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/static-collect/')
+
 STATIC_URL = '/static/'
+
+# TinyMCE for Django
 
 TINYMCE_DEFAULT_CONFIG = {
     'mode': 'exact',
     'theme': 'advanced',
     'height': 500,
     'plugins': 'preview,media,paste,fullscreen,visualchars',
-    'theme_advanced_buttons1': 'fullscreen,|,bold,italic,underline,strikethrough,bullist,numlist,|,formatselect,removeformat',
-    'theme_advanced_buttons2': 'pasteword,|,undo,redo,|,link,unlink,|,image,media,charmap,|,visualchars,preview,code',
+    'theme_advanced_buttons1': ('fullscreen,|,bold,italic,underline,strikethrough'
+                                ',bullist,numlist,|,formatselect,removeformat'),
+    'theme_advanced_buttons2': ('pasteword,|,undo,redo,|,link,unlink,|,image,'
+                                'media,charmap,|,visualchars,preview,code'),
     'theme_advanced_toolbar_location': 'top',
     'theme_advanced_toolbar_align': 'center',
     'content_css': '/media/css/tinymce.css',
