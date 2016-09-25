@@ -1,5 +1,500 @@
 {% extends 'base.html' %}
 
+{% set active_page='index' %}
 {% block title %}FLOČ{% endblock %}
 {% block description %}Domovská stránka ochotníckeho divadla FLOČ v Hlohovci{% endblock %}
-{% block content %}Dayum{% endblock %}
+
+{% block content %}
+<!-- FLEX SLIDER -->
+<div class="indent-header">
+    <div class="slider-1 clearfix">
+
+        <div class="flex-container">
+            <div class="flexslider loading">
+                <ul class="slides">
+
+                    <!-- SLIDE 1 -->
+                    <li style="background:url({{ static('images/flexslider/slider-bg-1.jpg') }}) no-repeat;background-position:50% 0">
+
+                        <div class="container">
+                            <div class="sixteen columns contain">
+                                <h2 data-toptitle="38%" class="norm-50-wide norm-40-768-959 font-light top-28-767 flex-top-bot" >OCHOTNÍCI Z<br><span class="bold">FLOČ</span></h2>
+                                <p data-bottomtext="30%" class="bot-15-767 flex-bot-top"><a class="button medium thin hover-dark tp-button white" href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">SEE MORE</a><a class="button medium thin hover-dark tp-button white ml-20" href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">PURCHASE</a></p>
+                                <img src="{{ static('images/flexslider/slider-item-1.png') }}" class="item" alt="slide-item"  data-topimage="19%"/>
+                            </div>
+                        </div><!-- End Container -->
+
+                    </li><!-- End item -->
+
+                    <!-- SLIDE 2 -->
+                    <li style="background:url({{ static('images/flexslider/slider-bg-2.jpg') }}) no-repeat; background-position:50% 0">
+
+                        <div class="container">
+                            <div class="sixteen columns contain">
+                                <h2 data-toptitle="44%" class="norm-50-wide text-center font-white flex-top-bot"><span class="slider-caption-border">FRAŠTÁK</span></h2>
+                            </div>
+                        </div><!-- End Container -->
+
+                    </li><!-- End item -->
+
+                    <!-- SLIDE 3 -->
+                    <li style="background:url({{ static('images/flexslider/slider-bg-3.jpg') }}) no-repeat; background-position:50% 0">
+
+                        <div class="container">
+                            <div class="sixteen columns contain">
+                                <h2 data-toptitle="40%" class="norm-50-wide norm-40-768-959 top-34-767 font-light font-black flex-top-bot">CREATIVE STUDIO<br></h2>
+                                <p data-bottomtext="40%" class="norm-50-wide norm-40-768-959 bot-34-767 font-black flex-bot-top"><span class="bold">HASWELL</span></p>
+                                <img src="images/flexslider/jump-men.png" class="item" alt="slide-item" data-topimage="0%"/>
+                            </div>
+                        </div><!-- End Container -->
+
+                    </li><!-- End item -->
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div><!-- End slider -->
+</div>
+
+<!-- FEATURES 6 -->
+<div class="page-section pt-120-b-100-cont">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 pb-20">
+                <h2 class="section-title wow fadeIn"><span class="bold">F</span>RAŠTÁCKA<br><span class="bold">Ľ</span>AHKOVÁŽNA<br><span class="bold">O</span>HOTNÍCKA<br><span class="bold">Č</span>INOHRA</h2>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="fes11-box wow fadeIn" >
+                            <div class="icon icon-basic-laptop"></div>
+                            <h3>FRAŠTÁCKA</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="fes11-box wow fadeIn" data-wow-delay="200ms">
+                            <div class="icon icon-basic-keyboard"></div>
+                            <h3>ĽAHKOVÁŽNA</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="fes11-box wow fadeIn" data-wow-delay="400ms" >
+                            <div class="icon icon-basic-globe"></div>
+                            <h3>OCHOTNÍCKA</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="fes11-box wow fadeIn" data-wow-delay="600ms" >
+                            <div class="icon icon-basic-globe"></div>
+                            <h3>ČINOHRA</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                        <div class="floc-explained wow fadeIn" data-wow-delay="800ms">
+                           <p><a href="http://www.slex.sk/index.asp?key=flocit">fľočiť</a> nedok. expr. fľochať, zazerať, gániť: fľočí na ľudí</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES 7 -->
+<div class="page-section grey-light-bg clearfix">
+    <div class="fes7-img-cont col-md-5">
+        <div class="fes7-img" style="background-image: url({{ static('images/fes7.jpg') }}" ></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6 fes7-text-cont p-80-cont">
+                <h1><span class="font-light">Nulla varius faucibus vestibulum. Sed imperdiet, tellus at iaculis</span></h1>
+                <p class="mb-60">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fes7-box wow fadeIn" >
+                            <div class="fes7-box-icon">
+                                <div class="icon icon-ecommerce-graph-increase"></div>
+                            </div>
+                            <h3>SEO Friendly</h3>
+                            <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fes7-box wow fadeIn" data-wow-delay="200ms">
+                            <div class="fes7-box-icon">
+                                <div class="icon icon-software-font-smallcaps"></div>
+                            </div>
+                            <h3>Google Fonts</h3>
+                            <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fes7-box wow fadeIn" data-wow-delay="400ms">
+                            <div class="fes7-box-icon">
+                                <div class="icon icon-basic-mixer2"></div>
+                            </div>
+                            <h3>Tons of Shortcodes</h3>
+                            <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fes7-box wow fadeIn"  data-wow-delay="600ms">
+                            <div class="fes7-box-icon">
+                                <div class="icon icon-basic-bolt"></div>
+                            </div>
+                            <h3>1500+ Icons</h3>
+                            <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div><!--end of row-->
+    </div>
+</div>
+
+<!-- BLOG 2 -->
+<div class="page-section pt-110-cont">
+    <div class="container">
+
+        <div class="mb-50">
+            <h2 class="section-title pr-0">NAJBLIŽŠÍ <span class="bold">PROGRAM</span><a href="blog-right-sidebar.html" class="section-more right">PROGRAM</a>
+                    </h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Post Item 1 -->
+            <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                    <div class="col-md-4 blog2-post-title-cont">
+                        <div class="post-prev-date-cont">
+                            <span class="blog2-date-numb">21</span><span class="blog2-month">October</span>
+                        </div>
+                        <div class="post-prev-title">
+                            <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
+                            <div class="post-prev-info">
+                                <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="blog2-post-prev-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Post Item 2 -->
+            <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                    <div class="col-md-4 blog2-post-title-cont">
+                        <div class="post-prev-date-cont">
+                            <span class="blog2-date-numb">17</span><span class="blog2-month">August</span>
+                        </div>
+                        <div class="post-prev-title">
+                            <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB</a></h3>
+                            <div class="post-prev-info">
+                                <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="blog2-post-prev-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Post Item 3 -->
+            <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+
+                    <div class="col-md-4 blog2-post-title-cont">
+                        <div class="post-prev-date-cont">
+                            <span class="blog2-date-numb">1</span><span class="blog2-month">August</span>
+                        </div>
+                        <div class="post-prev-title">
+                            <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
+                            <div class="post-prev-info">
+                                <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="blog2-post-prev-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- VIEW MORE  -->
+<div class="port-view-more-cont">
+    <a class="port-view-more" href="portfolio-4-col-masonry.html">CELÝ PROGRAM</a>
+</div>
+
+<!-- COUNTERS 1 -->
+<div id="counter-1" class="page-section p-80-cont">
+    <div class="container">
+
+        <div  class="row text-center">
+
+            <!-- Item -->
+            <div class="col-xs-6 col-sm-3">
+                <div class="count-number">
+                    75
+                </div>
+                <div class="count-descr">
+                    <span class="count-title">AWARDS WINNING</span>
+                </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col-xs-6 col-sm-3">
+                <div class="count-number">
+                 450
+                </div>
+                <div class="count-descr">
+                    <span class="count-title">HAPPY CLIENTS</span>
+                </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col-xs-6 col-sm-3">
+                <div class="count-number">
+                    151
+                </div>
+                <div class="count-descr">
+                    <span class="count-title">PROJECTS DONE</span>
+                </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col-xs-6 col-sm-3">
+                <div class="count-number">
+                 768
+                </div>
+                <div class="count-descr">
+                    <span class="count-title">HOURS OF CODE</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- DIVIDER -->
+<hr class="mt-0 mb-0">
+
+<!-- BLOG 1 -->
+<div class="page-section pt-110-b-30-cont">
+    <div class="container">
+
+        <div class="mb-50">
+            <h2 class="section-title pr-0">LATEST <span class="bold">NEWS</span><a href="blog-right-sidebar.html" class="section-more right">OUR BLOG</a>
+                    </h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Post Item 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" >
+
+                <div class="post-prev-img">
+                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-1.jpg') }}" alt="img"></a>
+                </div>
+
+                <div class="post-prev-title">
+                    <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
+                </div>
+
+                <div class="post-prev-info">
+                    JULE 10<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                </div>
+
+                <div class="post-prev-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
+                </div>
+
+                <div class="post-prev-more-cont clearfix">
+                    <div class="post-prev-more left">
+                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+                    </div>
+                    <div class="right" >
+                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
+                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+                            <span aria-hidden="true" class="social_share"></span>
+                        </a>
+                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
+                            </li>
+                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Post Item 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="200ms" >
+
+                <div class="post-prev-img">
+                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-2.jpg') }}" alt="img"></a>
+                </div>
+
+                <div class="post-prev-title">
+                    <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
+                </div>
+
+                <div class="post-prev-info">
+                    MAY 11<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                </div>
+
+                <div class="post-prev-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
+                </div>
+
+                <div class="post-prev-more-cont clearfix">
+                    <div class="post-prev-more left">
+                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+                    </div>
+                    <div class="right" >
+                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
+                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+                            <span aria-hidden="true" class="social_share"></span>
+                        </a>
+                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
+                            </li>
+                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Post Item 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="400ms" >
+
+                <div class="post-prev-img">
+                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-3.jpg') }}" alt="img"></a>
+                </div>
+
+                <div class="post-prev-title">
+                    <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
+                </div>
+
+                <div class="post-prev-info">
+                    DECEMBER 21<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                </div>
+
+                <div class="post-prev-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
+                </div>
+
+                <div class="post-prev-more-cont clearfix">
+                    <div class="post-prev-more left">
+                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+                    </div>
+                    <div class="right" >
+                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
+                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+                            <span aria-hidden="true" class="social_share"></span>
+                        </a>
+                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
+                            </li>
+                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- ABOUT US 2 -->
+<div class="page-section about-us-2-cont pt-100-cont">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-40">
+                    <h2 class="section-title">NAŠI <span class="bold">HERCI</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+                <img src="{{ static('images/team/team-all.jpg') }}" alt="img">
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- VIEW MORE PROJECTS  -->
+<div class="port-view-more-cont">
+    <a class="port-view-more-inv" href="about-us.html">VŠETCI HERCI</a>
+</div>
+
+<!-- CALL TO ACTION  -->
+<div class="port-view-more-cont-dark">
+    <a class="port-view-more-dark " href="contact.html">CHCETE NÁS VIDIEŤ VO VAŠOM MESTE?</a>
+</div>
+
+{% endblock %}
+
