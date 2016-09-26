@@ -10,12 +10,23 @@ class Show(models.Model):
     id = models.AutoField(primary_key=True)
     location = models.CharField(
         verbose_name=u'miesto',
+        help_text=u'Napr. Empírove divadlo Hlohovec',
+        max_length=255,
+    )
+    location_verbose = models.CharField(
+        verbose_name=u'celá adresa',
+        help_text=u'Napr. Empírove divadlo, Koperníkova 23, 920 01 Hlohovec',
         max_length=255,
     )
     play = models.ForeignKey(
         Play,
         verbose_name=u'inscenácia',
         related_name='shows'
+    )
+    description = models.CharField(
+        verbose_name=u'krátky popis',
+        help_text=u'Približne 2-3 vety, jedinečné pre každé predstavenie.',
+        max_length=255,
     )
     start_time = models.DateTimeField(verbose_name=u'čas začiatku')
     price = models.DecimalField(

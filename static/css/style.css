@@ -3168,6 +3168,7 @@ select.input-border {
   list-style: none;
   margin: 0;
   padding:0;
+  text-transform: uppercase;
 }
 .widget .links-list li{
  padding-bottom:7px;
