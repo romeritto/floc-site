@@ -1208,6 +1208,7 @@ support for no js
 .pt-110-cont{ padding-top:110px;}
 .pt-100-cont{ padding-top:100px;}
 .pt-50-b-30-cont{ padding-top:50px; padding-bottom:30px;}
+.pt-80-b-30-cont { padding-top:80px; padding-bottom:30px;}
 .pt-80-b-50-cont { padding-top:80px; padding-bottom:50px;}
 .pt-100-b-80-cont { padding-top:100px; padding-bottom:80px;}
 .pt-110-b-80-cont { padding-top:110px; padding-bottom:80px;}
@@ -2341,6 +2342,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   width: 100%;
 }
 .post-prev-title h3{
+  text-transform: uppercase;
   margin:0;
 	font-family: 'Open Sans',Arial,Helvetica,sans-serif;
   font-size:16px;
@@ -2459,18 +2461,42 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .blog2-post-title-cont {
   position:relative;
 }
+.post-prev-time-cont {
+  position: absolute;
+  top: 49px;
+  left: 19px;
+}
 .post-prev-date-cont {
   position: absolute;
-  top: 24px;
+  top: 6px;
   left: 15px;
 }
 .blog2-date-numb {
   font-size:35px;
   font-weight:100;
 }
+.blog2-clock {
+  font-size: 29px;
+  padding-right: 6px;
+}
+.blog2-hour {
+  font-size:30px;
+  font-weight:100;
+}
+.blog2-minutes {
+  font-size:20px;
+  font-weight:100;
+  position: relative;
+  top: -8px;
+  font-size: 20px;
+}
 .blog2-month {
   font-size:13px;
   padding-left:3px;
+}
+.blog2-time {
+  margin-top: 5px;
+  font-size: 8px;
 }
 .blog2-post-title-cont .post-prev-info {
   margin:0;
@@ -2491,8 +2517,17 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
     font-size:30px;
   }
   .post-prev-date-cont {
-    top: 16px;
+    top: 0px;
     text-align:center;
+  }
+  .blog2-clock {
+    display: none;
+  }
+  .blog2-hour {
+    font-size: 25px;
+  }
+  .blog2-minutes {
+    font-size: 15px;
   }
 }
 
@@ -5921,6 +5956,19 @@ a:hover {
   text-decoration: none;
   transition: all .3s ease 0s;
 	cursor:pointer;
+}
+.fake-a {
+  cursor: pointer;
+  color: #4b4e53;
+  outline: none !important;
+  text-decoration: none;
+  transition: all .3s ease 0s;
+}
+.fake-a:hover {
+  color: #97999c;
+  text-decoration: none;
+  transition: all .3s ease 0s;
+  cursor:pointer;
 }
 .a-dark{
 	color: #101010;

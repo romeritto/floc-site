@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from floc.views import FlocTemplateView
 
-# Create your views here.
+
+class ShowsView(FlocTemplateView):
+    template_name = 'shows/shows.html'

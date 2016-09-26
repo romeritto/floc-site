@@ -1,5 +1,11 @@
+{% import 'macros.html' as macros %}
+
+{% set active_page = active_page|default('index') %}
+{% set show_page_title = show_page_title|default(1) %}
+
 {% set navigation_bar = [
     ('index', 'DOMOV'),
+    ('shows', 'PROGRAM'),
 ] %}
 
 <!DOCTYPE html>
@@ -22,7 +28,7 @@
         <meta charset=utf-8 >
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
         <meta name="robots" content="index, follow" >
-        <meta name="description" content="{% block description %}{% endblock %}" >
+        <meta name="description" content="{% block meta_description %}{% endblock %}" >
         <meta name="author" content="Roman Sobkuliak">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -112,6 +118,32 @@
 
                 {% include 'header.html' %}
 
+                {% if show_page_title %}
+                    <!-- PAGE TITLE SMALL -->
+                    <div class="page-title-cont page-title-large grey-light-bg pt-250" style="background-image: url({{ static('images/page-title-pattern.png') }})">
+                        <div class="relative container align-left">
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <h1 class="page-title">{% block page_title %}{% endblock %}</h1>
+                                    <div class="page-sub-title">
+                                        {% block page_title_description %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="breadcrumbs">
+                                        {% block breadcrumbs %}{% endblock %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- COTENT CONTAINER -->
                 {% block content %}
                 {% endblock %}
 

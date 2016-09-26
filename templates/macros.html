@@ -1,0 +1,8 @@
+{% macro breadcrumb_url(target_url, title) %}
+    <a href="{{ target_url }}">{{ title }}</a>
+    <span class="slash-divider">/</span>
+{% endmacro %}
+
+{% macro breadcrumb_current(title) %}
+    <span class="bread-current">{{ title }}</span>
+{% endmacro %}

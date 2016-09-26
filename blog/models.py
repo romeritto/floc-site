@@ -30,10 +30,9 @@ class Blogpost(models.Model):
         max_length=255,
     )
     body = HTMLField(verbose_name=u'obsah')
-    posted = models.DateTimeField(
-        verbose_name=u'čas pridania',
-        db_index=True,
-        default=timezone.now,
+    image = models.ImageField(
+        verbose_name=u'obrázok',
+        upload_to='blog/',
     )
     related_play = models.ForeignKey(
         Play,
@@ -45,6 +44,11 @@ class Blogpost(models.Model):
         blank=True,
     )
 
+    posted = models.DateTimeField(
+        verbose_name=u'čas pridania',
+        db_index=True,
+        default=timezone.now,
+    )
     modification_time = models.DateTimeField(auto_now=True)
 
     class Meta:
