@@ -3240,6 +3240,7 @@ select.input-border {
   background: none;
   border: 0 none;
   margin: 0;
+  text-transform: uppercase;
 }
 #main-menu .navbar .navbar-collapse {
   padding: 0;

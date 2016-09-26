@@ -23,7 +23,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^program/', include('shows.urls')),
+    url(r'^program/', include('shows.urls', namespace='shows')),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^tinymce/', include('tinymce.urls')),
 ]
 

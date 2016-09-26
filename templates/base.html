@@ -4,8 +4,9 @@
 {% set show_page_title = show_page_title|default(1) %}
 
 {% set navigation_bar = [
-    ('index', 'DOMOV'),
-    ('shows', 'PROGRAM'),
+    ('index', 'Domov'),
+    ('shows:show_list', 'Program'),
+    ('blog:blogpost_list', 'Blog'),
 ] %}
 
 <!DOCTYPE html>
