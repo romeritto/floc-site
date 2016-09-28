@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from floc.views import FlocTemplateView
+
+
+class ActorListView(FlocTemplateView):
+    template_name = 'actors/actor_list.html'

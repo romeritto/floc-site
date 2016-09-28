@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^program/', include('shows.urls', namespace='shows')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^inscenacie/', include('plays.urls', namespace='plays')),
+    url(r'^o-nas/herci/', include('actors.urls', namespace='actors')),
     url(r'^tinymce/', include('tinymce.urls')),
 ]
 

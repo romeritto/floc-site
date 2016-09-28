@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}Herci{% endblock %}
+{% block meta_description %}Súčasní a bývalí herci Divadla FĽOČ v Hlohovci{% endblock %}
+{% block page_title %}Herci{% endblock %}
+{% block page_title_description %}Koho môžete na predstaveniach stretnúť{% endblock %}
+{% block breadcrumbs %}
+    {{ macros.breadcrumb_url(url('index'), 'Domov') }}
+    {{ macros.breadcrumb_current('Herci') }}
+{% endblock %}
+
+{% block content %}
+<div class="container plr-30 pt-50 pb-40 ">
+    <div class="relative">
+        <!-- TEAM FILTER -->
+        <div class="port-filter ">
+            <a href="#" class="filter active" data-filter="*">Všetci</a>
+            <a href="#" class="filter" data-filter=".development">Súčasní</a>
+            <a href="#" class="filter" data-filter=".design">Bývalí</a>
+        </div>
+
+        <!-- ITEMS GRID -->
+        <div class="clearfix" id="items-grid">
+
+            <div class="row">
+                <div class="mix development member col-md-4 col-sm-4 wow fadeInUp">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-1.jpg') }}" alt="img">
+                    </div>
+                    <h3>JESSICA DOE</h3>
+                    <span class="jobs">VP ENGINEERING</span>
+                    <div class="actor-bio">
+                        <p class="mb-30">ašpi je náš najväčší pánko. Stáva neskoro ránko a na skúšky chodí málko. Aj tak všetci radi máme ho, či ako Gašpar, či ako Titta-Nanneho</p>
+                    </div>
+                </div>
+
+                <div class="mix development member col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-2.jpg') }}" alt="img">
+                    </div>
+                    <h3>JOHN DOE</h3>
+                    <span>FOUNDER AND CEO</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="mix development member col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-3.jpg') }}" alt="img">
+                    </div>
+                    <h3>EDWARD DOE</h3>
+                    <span>CREATIVE DIRECTOR</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="mix design member col-md-3 col-sm-3 wow fadeInUp">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-6.jpg') }}" alt="img">
+                    </div>
+                    <h3>EMMA GRIFFITH</h3>
+                    <span>VP ENGINEERING</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class=" mix design member col-md-3 col-sm-3 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-8.jpg') }}" alt="img">
+                    </div>
+                    <h3>MARY BLACK</h3>
+                    <span>HR MANAGER</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="mix design member col-md-3 col-sm-3 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-7.jpg') }}" alt="img">
+                    </div>
+                    <h3>BRIAN GREEN</h3>
+                    <span>ANDROID DEVELOPER</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="mix design member col-md-3 col-sm-3 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="member-image">
+                        <img src="{{ static('images/team/team-10.jpg') }}" alt="img">
+                    </div>
+                    <h3>PAUL BISHOP</h3>
+                    <span>iOS DEVELOPER</span>
+                    <ul class="team-social">
+                        <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
+                        <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -33,8 +33,8 @@
             <div class="col-md-3 col-sm-3 widget">
                 <h4>NAVIGÁCIA</h4>
                 <ul class="links-list bold a-text-cont">
-                    {% for pattern, caption in navigation_bar %}
-                        <li><a href="{{ url(pattern) }}">{{ caption|e }}</a></li>
+                    {% for uri, caption, sub in navigation_bar %}
+                        <li><a href="{{ uri }}">{{ caption|e }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from floc.views import FlocTemplateView
 
-# Create your views here.
+from . import views
+
+
+class PlayListView(FlocTemplateView):
+    template_name = 'plays/play_list.html'

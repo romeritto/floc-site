@@ -658,7 +658,10 @@ body {
     transform: translateX(0);
   }
 }
-
+.actor-bio {
+  text-align: justify;
+  margin-top: 15px;
+}
 /* --------------------------------
 support for no js
 -------------------------------- */
@@ -2234,7 +2237,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   padding-bottom: 5px;
   position: relative;
 }
-.member span {
+.member .jobs {
   font-size: 14px;
   font-style: normal;
 }

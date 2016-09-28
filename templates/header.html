@@ -1,7 +1,33 @@
-{% macro current(id) %}
-    {% if active_page == id %}
+{#
+    uri == '/' is a special case for index page, because
+    every page starts with '/'. Shame on me.
+#}
+
+{% macro current(uri) %}
+    {% if uri == '/' %}
+        {% if request.path == uri %}
+            current
+        {% endif %}
+    {% elif startswith(request.path, uri) %}
         current
     {% endif %}
+{% endmacro %}
+
+{% macro render_sub(parent_uri, parent_sub) %}
+    {% for uri, caption, sub in parent_sub %}
+        {% if sub %}
+            <li class="parent">
+                <a href="#" class="{{ current(uri) }}">{{ caption|e }}</a>
+                <ul class="sub">
+                    {{ render_sub(uri, sub) }}
+                </ul>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ uri }}" class="{{ current(uri) }}">{{ caption|e }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
 {% endmacro %}
 
 <!-- HEADER 1 NO-TRANSPARENT -->
@@ -40,15 +66,22 @@
                 <!-- MAIN MENU LIST -->
                 <nav class="collapse collapsing navbar-collapse right-1024">
                     <ul class="nav navbar-nav">
+                        {% for uri, caption, sub in navigation_bar %}
 
-                        {% for pattern, caption in navigation_bar %}
-                            <li class="parent {{ current(pattern) }}">
-                                <a href="{{ url(pattern) }}"><div class="main-menu-title">{{ caption|e }}</div></a>
-                            </li>
+                            {% if sub %}
+                                <li class="parent {{ current(uri) }}">
+                                    <a href="#"><div class="main-menu-title">{{ caption|e }}</div></a>
+                                    <ul class="sub">
+                                        {{ render_sub(uri, sub) }}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ uri }}"><div class="main-menu-title">{{ caption|e }}</div></a>
+                                </li>
+                            {% endif %}
+
                         {% endfor %}
-                        <li class="parent">
-                            <a href="/"><div class="main-menu-title">MAPKA</div></a>
-                        </li>
                         <li class="parent">
                             <a href="/"><div class="main-menu-title">O JANOVI</div></a>
                         </li>

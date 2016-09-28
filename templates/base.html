@@ -1,12 +1,15 @@
 {% import 'macros.html' as macros %}
 
-{% set active_page = active_page|default('index') %}
 {% set show_page_title = show_page_title|default(1) %}
 
 {% set navigation_bar = [
-    ('index', 'Domov'),
-    ('shows:show_list', 'Program'),
-    ('blog:blogpost_list', 'Blog'),
+    (url('index'), 'Domov', []),
+    (url('shows:show_list'), 'Program', []),
+    (url('blog:blogpost_list'), 'Blog', []),
+    (url('plays:play_list'), 'Inscenácie', []),
+    (url('actors:actor_list'), 'O nás', [
+        (url('actors:actor_list'), 'Herci', []),
+    ])
 ] %}
 
 <!DOCTYPE html>
