@@ -9,7 +9,9 @@
     (url('plays:play_list'), 'Inscenácie', []),
     (url('actors:actor_list'), 'O nás', [
         (url('actors:actor_list'), 'Herci', []),
-    ])
+        (url('history'), 'História', []),
+    ]),
+    (url('contact'), 'Kontakt', []),
 ] %}
 
 <!DOCTYPE html>
@@ -191,6 +193,9 @@
         <!-- FLEX SLIDER SCRIPTS  -->
         <script src="{{ static('js/jquery.flexslider-min.js') }}"></script>
         <script src="{{ static('js/flex-slider.js') }}"></script>
+
+        {% block custom_js %}
+        {% endblock%}
 
 <!-- JS end -->
 

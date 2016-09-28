@@ -3,6 +3,11 @@
     <span class="slash-divider">/</span>
 {% endmacro %}
 
+{% macro breadcrumb_plain(title) %}
+    <span class="">{{ title }}</span>
+    <span class="slash-divider">/</span>
+{% endmacro %}
+
 {% macro breadcrumb_current(title) %}
     <span class="bread-current">{{ title }}</span>
 {% endmacro %}

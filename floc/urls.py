@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^inscenacie/', include('plays.urls', namespace='plays')),
     url(r'^o-nas/herci/', include('actors.urls', namespace='actors')),
+    url(r'^o-nas/historia/$', views.HistoryView.as_view(), name='history'),
+    url(r'^kontakt/', views.ContactView.as_view(), name='contact'),
     url(r'^tinymce/', include('tinymce.urls')),
 ]
 

@@ -2648,6 +2648,15 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 	padding-top: 25px;
 }
 
+/* #GMAPS 2 #NEW
+=====================================================*/
+#contact-map {
+  height: 600px;
+  position: relative;
+  background-color: #eee !important;
+  z-index: 1;
+}
+
 /* #STATICK MEDIA #NEW
 =====================================================*/
 .sm-img-bg {

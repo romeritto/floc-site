@@ -7,3 +7,11 @@ class FlocTemplateView(TemplateView):
 
 class IndexView(FlocTemplateView):
     template_name = 'index.html'
+
+
+class HistoryView(FlocTemplateView):
+    template_name = 'history.html'
+
+
+class ContactView(FlocTemplateView):
+    template_name = 'contact.html'
