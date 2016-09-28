@@ -76,7 +76,7 @@
                                     </ul>
                                 </li>
                             {% else %}
-                                <li>
+                                <li class="{{ current(uri) }}">
                                     <a href="{{ uri }}"><div class="main-menu-title">{{ caption|e }}</div></a>
                                 </li>
                             {% endif %}
