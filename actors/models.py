@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from django_resized import ResizedImageField
+
 from actors.managers import ActorManager
 
 
@@ -21,13 +23,15 @@ class Actor(models.Model):
         verbose_name=u'biografia',
         help_text=u'Popis herca.',
     )
-    photo = models.ImageField(
+    photo = ResizedImageField(
         verbose_name=u'fotka',
-        upload_to='actors/',
         help_text=(
             u'Fotka by mala mať veľkosť 336x376 pixelov. '
             u'V opačnom prípade bude veľkosť zmenená automaticky.'
         ),
+        upload_to='actors/',
+        size=[336, 376],
+        crop=['middle', 'center'],
         blank=True,
     )
 

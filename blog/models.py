@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 from tinymce.models import HTMLField
+from sorl.thumbnail import ImageField
 
 from plays.models import Play
 from actors.models import Actor
@@ -30,7 +31,7 @@ class Blogpost(models.Model):
         max_length=255,
     )
     body = HTMLField(verbose_name=u'obsah')
-    image = models.ImageField(
+    image = ImageField(
         verbose_name=u'obrázok',
         upload_to='blog/',
     )

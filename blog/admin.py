@@ -17,7 +17,7 @@ class BlogpostAdminForm(forms.ModelForm):
 
 
 class BlogpostAdmin(admin.ModelAdmin):
-    fields = ['title', 'author', 'intro', 'body', 'related_play']
+    fields = ['title', 'author', 'intro', 'body', 'image', 'related_play']
 
     form = BlogpostAdminForm
 

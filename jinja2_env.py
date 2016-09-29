@@ -1,5 +1,6 @@
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import reverse
+from sorl.thumbnail.shortcuts import get_thumbnail
 
 from jinja2 import Environment
 
@@ -15,6 +16,7 @@ def environment(**options):
         'static': staticfiles_storage.url,
         'url': reverse,
         'startswith': startswith,
+        'get_thumbnail': get_thumbnail,
     })
 
     return env

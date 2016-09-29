@@ -9,7 +9,7 @@ class ActorModelAdmin(ReverseModelAdmin):
 
     inline_type = 'tabular'
     inline_reverse = [
-        ('user', {'fields': ['username', 'first_name', 'last_name', 'email']}),
+        ('user', {'fields': ['username', 'first_name', 'last_name', 'is_active']}),
     ]
     fields = ['bio', 'jobs', 'photo']
 

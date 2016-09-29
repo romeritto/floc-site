@@ -18,17 +18,25 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from . import views
+from .views import FlocTemplateView, IndexView
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', IndexView.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^program/', include('shows.urls', namespace='shows')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^inscenacie/', include('plays.urls', namespace='plays')),
     url(r'^o-nas/herci/', include('actors.urls', namespace='actors')),
-    url(r'^o-nas/historia/$', views.HistoryView.as_view(), name='history'),
-    url(r'^kontakt/', views.ContactView.as_view(), name='contact'),
+    url(
+        r'^o-nas/historia/$',
+        FlocTemplateView.as_view(template_name='history.html'),
+        name='history'
+    ),
+    url(
+        r'^kontakt/$',
+        FlocTemplateView.as_view(template_name='contact.html'),
+        name='contact'
+    ),
     url(r'^tinymce/', include('tinymce.urls')),
 ]
 

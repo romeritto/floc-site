@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-from floc.views import FlocTemplateView
+from floc.views import FlocContextMixin
+from .models import Actor
 
 
-class ActorListView(FlocTemplateView):
-    template_name = 'actors/actor_list.html'
+class ActorListView(FlocContextMixin, ListView):
+    model = Actor
+    context_object_name = 'actor_objects'

@@ -44,6 +44,7 @@ DEFAULT_APPS = [
 THIRD_PARTY_APPS = [
     'django_reverse_admin',
     'tinymce',
+    'sorl.thumbnail',
 ]
 
 LOCAL_APPS = [

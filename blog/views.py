@@ -1,5 +1,8 @@
-from floc.views import FlocTemplateView
+from django.views.generic import ListView
+
+from floc.views import FlocContextMixin
+from .models import Blogpost
 
 
-class BlogpostListView(FlocTemplateView):
-    template_name = 'blog/blogpost_list.html'
+class BlogpostListView(FlocContextMixin, ListView):
+    model = Blogpost
