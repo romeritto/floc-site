@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="post-prev-info">
-                        {{ _date(blogpost.posted, "d F") }}
+                        {{ _date(blogpost.posted|localtime, "d F") }}
                         <span class="slash-divider">/</span>
                         <a href="{{ url('actors:actor_list') }}#{{ blogpost.author.user.username }}">{{ blogpost.author.full_name }}</a>
                     </div>
