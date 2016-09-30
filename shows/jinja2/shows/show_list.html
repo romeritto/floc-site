@@ -29,6 +29,16 @@
                         {{ show.location }}
                     </span>
                 </div>
+                <div>
+                    <span class="icon icon-ecommerce-ticket"></span>
+                    <span class="ticket-price">
+                        {% if show.price == 0.00 %}
+                            Vstupné dobrovoľné
+                        {% else %}
+                            Cena lístka: {{ show.price }}€
+                        {% endif %}
+                    </span>
+               </div>
             </div>
         </div>
 
@@ -42,6 +52,10 @@
 </div>
 {% endmacro %}
 
+{% if show_all %}
+mb-100
+{% endif %}
+
 {% block content %}
 <div class="container pt-100-cont">
 
@@ -50,13 +64,20 @@
     </div>
 
     <div class="row">
-        {% for show in upcoming_shows %}
-            {{ render_single_show(show) }}
-        {% endfor %}
+        {% if upcoming_shows %}
+            {% for show in upcoming_shows %}
+                {{ render_single_show(show) }}
+            {% endfor %}
+        {% else %}
+            <p class="no-upcoming">
+                Práve nemáme naplánované žiadne vystúpenia.
+                <a href="kontakt"> Chceli by ste nás vidieť vo vašej obci?</a>
+            </p>
+        {% endif %}
     </div>
 </div>
 
-<div class="container pt-80">
+<div class="container pt-80 {% if show_all %}mb-80{% endif %}">
     <div class="mb-50">
         <h2 class="section-title pr-0">STARŠIE <span class="bold">VYSTÚPENIA</span></h2>
     </div>
@@ -68,8 +89,11 @@
     </div>
 </div>
 
-<!-- VIEW MORE  -->
-<div class="port-view-more-cont">
-    <a class="port-view-more" href="{{ url('shows:show_list') }}?all">STARŠIE</a>
-</div>
+{% if not show_all %}
+    <!-- VIEW MORE  -->
+    <div class="port-view-more-cont">
+        <a class="port-view-more" href="{{ url('shows:show_list') }}?all=1">STARŠIE</a>
+    </div>
+{% endif %}
+
 {% endblock %}

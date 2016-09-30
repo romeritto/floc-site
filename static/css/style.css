@@ -1202,6 +1202,10 @@ support for no js
 	color:#4b4e53;
   border-left:#4b4e53 2px solid;
 }
+.no-upcoming {
+  margin-left: 30px;
+  font-size: 16px;
+}
 
 .p-50-cont{ padding-top:50px; padding-bottom:50px;}
 .p-60-cont{ padding-top:60px; padding-bottom:60px;}
@@ -2352,6 +2356,9 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   line-height:26px;
   font-weight:600;
 }
+.ticket-price {
+  margin-left: 5px;
+}
 .blog-main-posts .post-prev-img{
   margin-bottom:30px;
 }
@@ -2471,7 +2478,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 }
 .post-prev-date-cont {
   position: absolute;
-  top: 6px;
+  top: 18px;
   left: 15px;
 }
 .blog2-date-numb {
@@ -2498,14 +2505,14 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   padding-left:3px;
 }
 .blog2-time {
-  margin-top: 5px;
+  margin-top: 13px;
   font-size: 8px;
 }
 .blog2-post-title-cont .post-prev-info {
   margin:0;
 }
 .blog2-post-prev-text {
-
+  padding-top: 25px;
 }
 @media (max-width: 768px) {
   .blog2-month {
@@ -2520,7 +2527,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
     font-size:30px;
   }
   .post-prev-date-cont {
-    top: 0px;
+    top: 10px;
     text-align:center;
   }
   .blog2-clock {

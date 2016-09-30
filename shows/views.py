@@ -7,7 +7,7 @@ class ShowTemplateView(FlocTemplateView):
     template_name = 'shows/show_list.html'
 
     def dispatch(self, request, *args, **kwargs):
-        self.show_all = True if kwargs.get('all', False) else False
+        self.show_all = True if request.GET.get('all', False) else False
 
         return super().dispatch(request, *args, **kwargs)
 

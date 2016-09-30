@@ -50,6 +50,8 @@ class Show(models.Model):
     def __str__(self):
         return (
             self.play.name +
+            ' - ' +
+            self.location +
             ' (' +
             self.start_time.strftime('%b %d %Y %H:%M') +
             ')'
