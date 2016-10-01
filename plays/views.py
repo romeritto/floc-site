@@ -1,7 +1,9 @@
-from floc.views import FlocTemplateView
+from django.views.generic import ListView
 
-from . import views
+from floc.views import FlocContextMixin
+from .models import Play
 
 
-class PlayListView(FlocTemplateView):
-    template_name = 'plays/play_list.html'
+class PlayListView(FlocContextMixin, ListView):
+    model = Play
+    context_object_name = 'play_objects'

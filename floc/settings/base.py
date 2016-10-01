@@ -28,7 +28,6 @@ ALLOWED_HOSTS = []
 
 
 # Apps definition
-
 DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -151,6 +150,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, '/static-collect/')
 
 STATIC_URL = '/static/'
+
 
 # TinyMCE for Django
 

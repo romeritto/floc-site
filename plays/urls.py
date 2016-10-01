@@ -1,8 +1,8 @@
 from django.conf.urls import url
 
-from . import views
+from .views import PlayListView
 
 
 urlpatterns = [
-    url(r'^$', views.PlayListView.as_view(), name='play_list'),
+    url(r'^$', PlayListView.as_view(), name='play_list'),
 ]
