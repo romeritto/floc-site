@@ -8,6 +8,11 @@ from .managers import ShowManager
 
 class Show(models.Model):
     id = models.AutoField(primary_key=True)
+    play = models.ForeignKey(
+        Play,
+        verbose_name=u'inscenácia',
+        related_name='shows'
+    )
     location = models.CharField(
         verbose_name=u'miesto',
         help_text=u'Napr. Empírove divadlo Hlohovec',
@@ -18,11 +23,6 @@ class Show(models.Model):
         help_text=u'Napr. Empírove divadlo, Koperníkova 23, 920 01 Hlohovec',
         max_length=255,
     )
-    play = models.ForeignKey(
-        Play,
-        verbose_name=u'inscenácia',
-        related_name='shows'
-    )
     description = models.CharField(
         verbose_name=u'krátky popis',
         help_text=u'Približne 2-3 vety, jedinečné pre každé predstavenie.',
@@ -31,6 +31,7 @@ class Show(models.Model):
     start_time = models.DateTimeField(verbose_name=u'čas začiatku')
     price = models.DecimalField(
         verbose_name=u'cena',
+        help_text=u'Pre dobrovoľné vstupné zvoľte cenu 0.',
         max_digits=6,
         decimal_places=2,
         default=Decimal(0.00),

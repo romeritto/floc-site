@@ -4,5 +4,5 @@ from .views import ActorListView
 
 
 urlpatterns = [
-    url(r'^$', ActorListView.as_view(), name='actor_list'),
+    url(r'^$', ActorListView.as_view(), name='actor-list'),
 ]

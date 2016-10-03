@@ -1989,6 +1989,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .port-title-cont {
   margin-bottom:0px;
   transition: all .4s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+  text-transform: uppercase;
 }
 .port-item:hover .port-title-cont, .lightbox-item:hover .port-title-cont {
   margin-bottom:15px;
@@ -2012,13 +2013,21 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .port-title-cont span a{
   color:#bebebe;
   font-size:12px;
-  text-transform: uppercase;
 }
 .port-title-cont span a:hover{
   color:#fff;
 }
+.port-btn-cont.overview {
+  color: #bebebe;
+}
+.port-btn-cont a.director {
+  font-size:14px;
+  color: #bebebe;
+}
+.port-btn-cont a.director:hover {
+  color:#fff;
+}
 .port-btn-cont a{
-  color:#bebebe;
   font-size:18px;
 }
 .port-btn-cont a:hover{

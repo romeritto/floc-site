@@ -17,40 +17,41 @@
         <div class="relative">
             <!-- PORTFOLIO FILTER -->
             <div class="port-filter ">
-                <a href="#" class="filter active" data-filter="*">All Projects</a>
-                <a href="#" class="filter" data-filter=".development">Development</a>
-                <a href="#" class="filter" data-filter=".design">Design</a>
-                <a href="#" class="filter" data-filter=".photography">Photography</a>
+                <a href="#" class="filter active" data-filter="*">Všetky</a>
+                {% for year in play_years %}
+                    <a href="#" class="filter" data-filter=".year-{{ year }}">{{ year }}</a>
+                {% endfor %}
             </div>
 
             <!-- ITEMS GRID -->
             <ul class="port-grid port-grid-2 clearfix" id="items-grid">
-
                 {% for play in play_objects %}
-                    <li class="port-item mix design>" >
-                       <a href="#">
-                       <div class="port-img-overlay"><img class="port-main-img" src="" alt="#" > </div>
-                       </a>
-                       <div class="port-overlay-cont clickable" >
-                             <a href="#"></a>
-                             <div class="port-title-cont ">
-                                <h3>{{ play.name }}</h3>
+                    <li class="port-item mix year-{{ play.premiere_date.year }}">
+                        <a href="#">
+                        <div class="port-img-overlay"><img class="port-main-img" src="{{ play.image_preview.url }}" alt="{{ play.name }} náhľad" > </div>
+                        </a>
+                        <div class="port-overlay-cont clickable" >
+                            <a href="#"></a>
+                            <div class="port-title-cont ">
+                                <h3>
+                                    <a href="{{ url('plays:play-detail', kwargs={'slug': play.slug}) }}">
+                                        {{ play.name }}
+                                    </a>
+                                </h3>
                                 <span>{{ play.author }}</span>
-                             </div>
-                             <div class="port-btn-cont">
-                                <p>
-                                   <b>Réžia:</b>
-                                   {{ play.director.full_name }}
-                                   <br>
-
-                                   <b>Premiéra:</b>
-                                   {{ _date(play.premiere_date|localtime, "d. m. Y") }}
-                                   <br>
-
-                                   {{ play.short_description }}
-                                </p>
-                             </div>
-                       </div>
+                            </div>
+                            <div class="port-btn-cont overview">
+                            <p>
+                                <b>Réžia:</b>
+                                <a class="director" href="{{ url('actors:actor-list') + '#' + play.director.user.username }}">
+                                    {{ play.director.full_name }}
+                                </a>
+                                <br>
+                                <b>Premiéra:</b>
+                                {{ _date(play.premiere_date|localtime, "d. m. Y") }}
+                            </p>
+                            </div>
+                        </div>
                     </li>
                 {% endfor %}
 

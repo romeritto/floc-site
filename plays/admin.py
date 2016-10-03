@@ -4,8 +4,8 @@ from .models import Play
 
 
 class PlayModelAdmin(admin.ModelAdmin):
-    fields = ['name', 'author', 'director', 'premiere_date', 'short_description',
-              'full_description', 'actors', ]
+    fields = ['name', 'author', 'director', 'premiere_date', 'image_preview',
+              'short_description', 'full_description', 'actors', ]
     filter_horizontal = ('actors', )
 
 admin.site.register(Play, PlayModelAdmin)

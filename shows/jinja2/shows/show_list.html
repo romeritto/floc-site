@@ -70,8 +70,8 @@ mb-100
             {% endfor %}
         {% else %}
             <p class="no-upcoming">
-                Práve nemáme naplánované žiadne vystúpenia.
-                <a href="kontakt"> Chceli by ste nás vidieť vo vašej obci?</a>
+                Práve nemáme naplánované žiadne vystúpenie.
+                <a href="{{ url('contact') }}"> Chceli by ste nás vidieť vo vašej obci?</a>
             </p>
         {% endif %}
     </div>
@@ -92,7 +92,7 @@ mb-100
 {% if not show_all %}
     <!-- VIEW MORE  -->
     <div class="port-view-more-cont">
-        <a class="port-view-more" href="{{ url('shows:show_list') }}?all=1">STARŠIE</a>
+        <a class="port-view-more" href="{{ url('shows:show-list') }}?all=1">STARŠIE</a>
     </div>
 {% endif %}
 

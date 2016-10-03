@@ -4,5 +4,5 @@ from .views import ShowTemplateView
 
 
 urlpatterns = [
-    url(r'^$', ShowTemplateView.as_view(), name='show_list'),
+    url(r'^$', ShowTemplateView.as_view(), name='show-list'),
 ]

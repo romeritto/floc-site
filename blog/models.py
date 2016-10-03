@@ -32,7 +32,7 @@ class Blogpost(models.Model):
     )
     body = HTMLField(verbose_name=u'obsah')
     image = ImageField(
-        verbose_name=u'obrázok',
+        verbose_name=u'fotka',
         upload_to='blog/',
     )
     related_play = models.ForeignKey(
