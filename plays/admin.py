@@ -1,11 +1,17 @@
 from django.contrib import admin
 
-from .models import Play
+from .models import Play, PlayImage
+
+
+class PlayImageInline(admin.TabularInline):
+    model = PlayImage
+    extra = 3
 
 
 class PlayModelAdmin(admin.ModelAdmin):
     fields = ['name', 'author', 'director', 'premiere_date', 'image_preview',
               'short_description', 'full_description', 'actors', ]
+    inlines = [PlayImageInline, ]
     filter_horizontal = ('actors', )
 
 admin.site.register(Play, PlayModelAdmin)

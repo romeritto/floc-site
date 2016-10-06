@@ -70,6 +70,7 @@ class Play(models.Model):
 
 class PlayImage(models.Model):
     id = models.AutoField(primary_key=True)
+    play = models.ForeignKey(Play, related_name='gallery')
     image = ResizedImageField(
         verbose_name=u'Fotka',
         help_text=(
@@ -81,4 +82,9 @@ class PlayImage(models.Model):
         crop=['middle', 'center'],
         blank=True,
     )
-    play = models.ForeignKey(Play, related_name='gallery')
+
+    class Meta:
+        verbose_name = u'Fotka pre inscenáciu'
+        verbose_name_plural = u'Fotky pre inscenáciu'
+
+        ordering = ['pk']
