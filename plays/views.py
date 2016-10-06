@@ -24,3 +24,10 @@ class PlayListView(FlocContextMixin, ListView):
 class PlayDetailView(FlocContextMixin, DetailView):
     model = Play
     context_object_name = 'play'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['other_plays'] = Play.objects.exclude(pk=self.object.id)[:4]
+
+        return context

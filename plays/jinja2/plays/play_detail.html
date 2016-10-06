@@ -71,87 +71,38 @@
             <h4 class="blog-page-title mt-0 mb-40">ĎALŠIE HRY</h4>
             <ul class="port-grid port-grid-gut clearfix" id="items-grid" style="position: relative; height: 564px;">
 
-                <!-- Item 1 -->
-                <li class="port-item mix development" style="position: absolute; left: 0px; top: 0px;">
-                    <a href="portfolio-single1.html">
-                        <div class="port-img-overlay"><img class="port-main-img" src="{{ static('images/portfolio/projects-5.jpg') }}" alt="img"></div>
-                    </a>
-                    <div class="port-overlay-cont">
-
-                            <div class="port-title-cont">
-                                <h3><a href="portfolio-single1.html">MINIMALISM BOOKS</a></h3>
-                                <span><a href="#">ui elements</a><span class="slash-divider">/</span><a href="#">media</a></span>
+                {% for rel_play in other_plays %}
+                    <li class="port-item mix" style="position: absolute; left: {{ loop.index*287 }}px; top: 0px;">
+                        <a href="{{ url('plays:play-detail', kwargs={'slug': rel_play.slug}) }}">
+                            <div class="port-img-overlay">
+                                <img
+                                    class="port-main-img"
+                                    src="{{ rel_play.image_preview.url }}"
+                                    alt="{{ rel_play.name }} + náhľad"
+                                >
                             </div>
-                            <div class="port-btn-cont">
-                                <a href="images/portfolio/projects-2-big.jpg" class="lightbox mr-20"><div aria-hidden="true" class="icon_search"></div></a>
-                                <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
+                        </a>
+                        <div class="port-overlay-cont">
+                            <div class="port-title-cont ">
+                                <h3>
+                                    <a href="{{ url('plays:play-detail', kwargs={'slug': rel_play.slug}) }}">
+                                        {{ rel_play.name }}
+                                    </a>
+                                </h3>
+                                <span>{{ rel_play.author }}</span>
+                            </div>
+                            <div class="port-btn-cont overview">
+                            <p>
+                                <b>Réžia:</b>
+                                <a class="director" href="{{ url('actors:actor-list') + '#' + rel_play.director.user.username }}">
+                                    {{ rel_play.director.full_name }}
+                                </a>
+                            </p>
                             </div>
 
-                    </div>
-                </li>
-
-                <!-- Item 2 -->
-                <li class="port-item mix design" style="position: absolute; left: 287px; top: 0px;">
-                    <a href="portfolio-single1.html">
-                        <div class="port-img-overlay">
-                            <img class="port-main-img" src="images/portfolio/projects-3.jpg" alt="img">
                         </div>
-                    </a>
-                    <div class="port-overlay-cont">
-
-                            <div class="port-title-cont">
-                                <h3><a href="portfolio-single1.html">CALENDAR</a></h3>
-                                <span><a href="#">photography</a><span class="slash-divider">/</span><a href="#">media</a></span>
-                            </div>
-                            <div class="port-btn-cont">
-                                <a href="images/portfolio/projects-2-big.jpg" class="lightbox mr-20"><div aria-hidden="true" class="icon_search"></div></a>
-                                <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                            </div>
-
-                    </div>
-                </li>
-
-                <!-- Item 3 -->
-                <li class="port-item mix photography" style="position: absolute; left: 575px; top: 0px;">
-                    <a href="portfolio-single1.html">
-                        <div class="port-img-overlay">
-                            <img class="port-main-img" src="images/portfolio/projects-1.jpg" alt="img">
-                        </div>
-                    </a>
-                    <div class="port-overlay-cont">
-
-                            <div class="port-title-cont">
-                                <h3><a href="portfolio-single1.html">EYES OF THE CAR</a></h3>
-                                <span><a href="#">branding</a><span class="slash-divider">/</span><a href="#">marketing</a></span>
-                            </div>
-                            <div class="port-btn-cont">
-                                <a href="images/portfolio/projects-2-big.jpg" class="lightbox mr-20"><div aria-hidden="true" class="icon_search"></div></a>
-                                <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                            </div>
-
-                    </div>
-                </li>
-
-                <!-- Item 4 -->
-                <li class="port-item mix development" style="position: absolute; left: 862px; top: 0px;">
-                    <a href="portfolio-single1.html">
-                        <div class="port-img-overlay">
-                            <img class="port-main-img" src="images/portfolio/projects-6.jpg" alt="img">
-                        </div>
-                    </a>
-                    <div class="port-overlay-cont">
-
-                            <div class="port-title-cont">
-                                <h3><a href="portfolio-single1.html">NOW IS NOW</a></h3>
-                                <span><a href="#">design</a><span class="slash-divider">/</span><a href="#">photography</a></span>
-                            </div>
-                            <div class="port-btn-cont">
-                                <a href="images/portfolio/projects-2-big.jpg" class="lightbox mr-20"><div aria-hidden="true" class="icon_search"></div></a>
-                                <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                            </div>
-
-                    </div>
-                </li>
+                    </li>
+                {% endfor %}
 
             </ul>
         </div>
