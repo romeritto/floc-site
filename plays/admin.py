@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Play, PlayImage
+from .models import Play, PlayImage, PlayCharacter
 
 
 class PlayImageInline(admin.TabularInline):
@@ -8,10 +8,14 @@ class PlayImageInline(admin.TabularInline):
     extra = 3
 
 
+class PlayCharacterInline(admin.TabularInline):
+    model = PlayCharacter
+    extra = 5
+
+
 class PlayModelAdmin(admin.ModelAdmin):
     fields = ['name', 'author', 'director', 'premiere_date', 'image_preview',
-              'short_description', 'full_description', 'actors', ]
-    filter_horizontal = ('actors', )
-    inlines = [PlayImageInline, ]
+              'short_description', 'full_description', ]
+    inlines = [PlayCharacterInline, PlayImageInline, ]
 
 admin.site.register(Play, PlayModelAdmin)

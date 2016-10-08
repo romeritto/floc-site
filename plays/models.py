@@ -45,6 +45,7 @@ class Play(models.Model):
         Actor,
         verbose_name=u'herci',
         related_name='plays',
+        through='PlayCharacter',
         blank=True,
     )
 
@@ -70,7 +71,7 @@ class Play(models.Model):
 
 class PlayImage(models.Model):
     id = models.AutoField(primary_key=True)
-    play = models.ForeignKey(Play, related_name='gallery')
+    play = models.ForeignKey(Play, verbose_name='herec', related_name='gallery')
     image = ResizedImageField(
         verbose_name=u'Fotka',
         help_text=(
@@ -88,3 +89,16 @@ class PlayImage(models.Model):
         verbose_name_plural = u'Fotky pre inscenáciu'
 
         ordering = ['pk']
+
+
+class PlayCharacter(models.Model):
+    play = models.ForeignKey(Play, verbose_name='hra')
+    actor = models.ForeignKey(Actor, verbose_name='herec')
+    name = models.CharField(
+        verbose_name=u'Meno postavy',
+        max_length=255,
+    )
+
+    class Meta:
+        verbose_name = u'Postava hry'
+        verbose_name_plural = u'Postavy hry'
