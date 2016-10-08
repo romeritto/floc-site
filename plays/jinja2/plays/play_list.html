@@ -28,13 +28,14 @@
 
                 {% for play in play_objects %}
                     <li class="port-item mix year-{{ play.premiere_date.year }}">
-                        <a href="#">
-                        <div class="port-img-overlay"><img class="port-main-img" src="{{ play.image_preview.url }}" alt="{{ play.name }} náhľad" > </div>
-                        </a>
+                        <div class="port-img-overlay">
+                            <img class="port-main-img" src="{{ play.image_preview.url }}" alt="{{ play.name }} náhľad">
+                        </div>
+
                         <div class="port-overlay-cont" >
                             <div class="port-title-cont ">
                                 <h3>
-                                    <a href="{{ url('plays:play-detail', kwargs={'slug': play.slug}) }}">
+                                    <a href="{{ play.get_absolute_url() }}">
                                         {{ play.name }}
                                     </a>
                                 </h3>

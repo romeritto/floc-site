@@ -111,19 +111,19 @@
 
                 {% for rel_play in other_plays %}
                     <li class="port-item mix" style="position: absolute; left: {{ loop.index*287 }}px; top: 0px;">
-                        <a href="{{ url('plays:play-detail', kwargs={'slug': rel_play.slug}) }}">
-                            <div class="port-img-overlay">
-                                <img
-                                    class="port-main-img"
-                                    src="{{ rel_play.image_preview.url }}"
-                                    alt="{{ rel_play.name }} + náhľad"
-                                >
-                            </div>
-                        </a>
+
+                        <div class="port-img-overlay">
+                            <img
+                                class="port-main-img"
+                                src="{{ rel_play.image_preview.url }}"
+                                alt="{{ rel_play.name }} + náhľad"
+                            >
+                        </div>
+
                         <div class="port-overlay-cont">
                             <div class="port-title-cont ">
                                 <h3>
-                                    <a href="{{ url('plays:play-detail', kwargs={'slug': rel_play.slug}) }}">
+                                    <a href="{{ rel_play.get_absolute_url() }}">
                                         {{ rel_play.name }}
                                     </a>
                                 </h3>

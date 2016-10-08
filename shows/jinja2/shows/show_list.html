@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="post-prev-title">
-                <h3><a href="#">{{ show.play.name }}</a></h3>
+                <h3><a href="{{ show.play.get_absolute_url() }}">{{ show.play.name }}</a></h3>
                 <div class="post-prev-info">
                     <span class="fake-a" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ show.location_verbose }}">
                         {{ show.location }}

@@ -1,6 +1,7 @@
 from django.db import models
 from django_resized import ResizedImageField
 from django.utils.text import slugify
+from django.urls import reverse
 
 from actors.models import Actor
 
@@ -67,6 +68,9 @@ class Play(models.Model):
             self.slug = slugify(self.name)
 
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('plays:play-detail', kwargs={'slug': self.slug})
 
 
 class PlayImage(models.Model):
