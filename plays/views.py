@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 
 from floc.views import FlocContextMixin
+from blog.models import Blogpost
 from .models import Play, PlayCharacter
 
 
@@ -26,6 +27,13 @@ class PlayDetailView(FlocContextMixin, DetailView):
     context_object_name = 'play'
 
     def get_context_data(self, **kwargs):
+        def get_blogposts():
+            related = self.object.blogposts.all()
+            if related:
+                return related
+            else:
+                return Blogpost.objects.all()[:2]
+
         context = super().get_context_data(**kwargs)
 
         context['characters'] = PlayCharacter.objects.select_related(
@@ -36,6 +44,6 @@ class PlayDetailView(FlocContextMixin, DetailView):
                                     'director',
                                     'director__user',
                                 ).exclude(pk=self.object.id)[:4]
-        context['related_blogposts'] = self.object.blogposts.all()
+        context['blogposts'] = get_blogposts()
 
         return context
