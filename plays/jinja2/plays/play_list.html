@@ -43,7 +43,7 @@
                             <div class="port-btn-cont overview">
                             <p>
                                 <b>Réžia:</b>
-                                <a class="director" href="{{ url('actors:actor-list') + '#' + play.director.user.username }}">
+                                <a class="director" href="{{ play.director.get_absolute_url() }}">
                                     {{ play.director.full_name }}
                                 </a>
                                 <br>

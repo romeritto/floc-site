@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
+from django.urls import reverse
 
 from actors.managers import ActorManager
 
@@ -52,3 +53,6 @@ class Actor(models.Model):
     def save(self, *args, **kwargs):
         self.user.save()
         return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('actors:actor-list')+'#'+self.user.username

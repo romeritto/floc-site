@@ -28,7 +28,9 @@
                         </p>
                         <p>
                             <strong>RÉŽIA:</strong>
-                                {{ play.director.full_name }}
+                                <a href="{{ play.director.user.username }}">
+                                    {{ play.director.full_name }}
+                                </a>
                         </p>
                         <p>
                             <strong>PREMIÉRA:</strong>
@@ -63,6 +65,22 @@
 
     </div>
 
+    <!-- CHARACTERS -->
+    <div class="container mb-80">
+        <h4 class="blog-page-title mt-0 mb-20">POSTAVY</h4>
+        <ul>
+            {% for play_char in characters %}
+                <li>
+                    {{ play_char.name }}
+                    -
+                    <a href="{{ play_char.actor.get_absolute_url() }}">
+                        {{ play_char.actor.full_name }}
+                    </a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
 
     <!-- RELATED PORT ITEMS -->
     <div class="page-section mt-80 mb-0" >
@@ -94,7 +112,7 @@
                             <div class="port-btn-cont overview">
                             <p>
                                 <b>Réžia:</b>
-                                <a class="director" href="{{ url('actors:actor-list') + '#' + rel_play.director.user.username }}">
+                                <a class="director" href="{{ rel_play.director.get_absolute_url() }}">
                                     {{ rel_play.director.full_name }}
                                 </a>
                             </p>

@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView
 
 from floc.views import FlocContextMixin
-from .models import Play
+from .models import Play, PlayCharacter
 
 
 class PlayListView(FlocContextMixin, ListView):
@@ -28,6 +28,13 @@ class PlayDetailView(FlocContextMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['other_plays'] = Play.objects.exclude(pk=self.object.id)[:4]
+        context['characters'] = PlayCharacter.objects.select_related(
+                                    'actor',
+                                    'actor__user',
+                                ).filter(play=self.object)
+        context['other_plays'] = Play.objects.select_related(
+                                    'director',
+                                    'director__user',
+                                ).exclude(pk=self.object.id)[:4]
 
         return context
