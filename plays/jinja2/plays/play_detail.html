@@ -65,25 +65,45 @@
 
     </div>
 
-    <!-- CHARACTERS -->
-    <div class="container mb-80">
-        <h4 class="blog-page-title mt-0 mb-20">POSTAVY</h4>
-        <ul>
-            {% for play_char in characters %}
-                <li>
-                    {{ play_char.name }}
-                    -
-                    <a href="{{ play_char.actor.get_absolute_url() }}">
-                        {{ play_char.actor.full_name }}
-                    </a>
-                </li>
-            {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 mb-40">
 
-        </ul>
+                <!-- CHARACTERS -->
+                <h4 class="blog-page-title mt-0 mb-40">POSTAVY</h4>
+                <ul>
+                    {% for play_char in characters %}
+                        <li>
+                            {{ play_char.name }}
+                            -
+                            <a href="{{ play_char.actor.get_absolute_url() }}">
+                                {{ play_char.actor.full_name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+            <div class="col-md-7 col-sm-7 mb-40">
+                <h4 class="blog-page-title mt-0 mb-40">ČLÁNKY</h4>
+                <div class="row">
+                    {% for blogpost in related_blogposts %}
+                        <div class="col-md-6 col-sm-6">
+                            {{ macros.blogpost_preview(blogpost) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="container">
+        <div class="divider-line"></div>
+    </div>
     <!-- RELATED PORT ITEMS -->
-    <div class="page-section mt-80 mb-0" >
+    <div class="page-section mb-0 mt-60" >
         <div class="container">
 
             <h4 class="blog-page-title mt-0 mb-40">ĎALŠIE HRY</h4>

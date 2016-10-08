@@ -36,5 +36,6 @@ class PlayDetailView(FlocContextMixin, DetailView):
                                     'director',
                                     'director__user',
                                 ).exclude(pk=self.object.id)[:4]
+        context['related_blogposts'] = self.object.blogposts.all()
 
         return context

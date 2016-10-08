@@ -16,35 +16,7 @@
         {% for blogpost in blogpost_objects %}
             <!-- Post Item -->
             <div class="col-sm-6 col-md-6 col-lg-6 pb-70">
-                <div class="post-prev-img">
-                        <a href="#"><img src="{{ get_thumbnail(blogpost.image, '600').url }}" alt="img"></a>
-                    </div>
-
-                    <div class="post-prev-title">
-                        <h3><a href="#">{{ blogpost.title }}</a></h3>
-                    </div>
-
-                    <div class="post-prev-info">
-                        {{ _date(blogpost.posted|localtime, "d F") }}
-                        <span class="slash-divider">/</span>
-                        <a href="{{ blogpost.author.get_absolute_url() }}">{{ blogpost.author.full_name }}</a>
-                    </div>
-
-                    <div class="post-prev-text">
-                        {{ blogpost.intro }}
-                    </div>
-
-                    <div class="post-prev-more-cont clearfix">
-                        <div class="post-prev-more left">
-                            <a href="#" class="blog-more">ZOBRAZIŤ VIAC</a>
-                        </div>
-                        <div class="right" >
-                            <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                            <a href="#" class="post-prev-count">
-                                <span aria-hidden="true" class="social_facebook"></span>
-                            </a>
-                        </div>
-                    </div>
+                {{ macros.blogpost_preview(blogpost) }}
             </div>
         {% endfor %}
 
