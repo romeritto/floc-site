@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from floc.views import FlocContextMixin
 from .models import Blogpost
@@ -12,3 +12,8 @@ class BlogpostListView(FlocContextMixin, ListView):
     ).all()
     paginate_by = 5
     context_object_name = 'blogpost_objects'
+
+
+class BlogpostDetailView(FlocContextMixin, DetailView):
+    model = Blogpost
+    context_object_name = 'blogpost'

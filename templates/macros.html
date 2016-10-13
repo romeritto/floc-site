@@ -14,11 +14,11 @@
 
 {% macro blogpost_preview(blogpost) %}
 <div class="post-prev-img">
-    <a href="#"><img src="{{ get_thumbnail(blogpost.image, '600').url }}" alt="img"></a>
+    <a href="{{ blogpost.get_absolute_url() }}"><img src="{{ get_thumbnail(blogpost.image, '600').url }}" alt="img"></a>
 </div>
 
 <div class="post-prev-title">
-    <h3><a href="#">{{ blogpost.title }}</a></h3>
+    <h3><a href="{{ blogpost.get_absolute_url() }}">{{ blogpost.title }}</a></h3>
 </div>
 
 <div class="post-prev-info">

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.urls import reverse
 
 from tinymce.models import HTMLField
 from sorl.thumbnail import ImageField
@@ -67,3 +68,6 @@ class Blogpost(models.Model):
             self.slug = slugify(self.title)
 
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('blog:blogpost-detail', kwargs={'slug': self.slug})
