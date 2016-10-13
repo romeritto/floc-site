@@ -11,5 +11,276 @@
 {% endblock %}
 
 {% block content %}
-asfas
+<!-- COTENT CONTAINER -->
+<div class="container p-140-cont">
+    <div class="row">
+
+        <!-- CONTENT -->
+        <div class="col-sm-8 blog-main-posts">
+
+            <!-- POST ITEM -->
+            <div class="blog-post wow fadeIn pb-50">
+                <!-- IMG -->
+                <div class="lightbox-item mb-30">
+                    <a href="{{ blogpost.image.url }}" class="lightbox">
+                    <div class="port-img-overlay">
+                        <img class="port-main-img" src="{{ blogpost.image.url }}" alt="img">
+                    </div>
+                    <div class="port-overlay-cont">
+                        <div class="port-btn-cont">
+                        <div aria-hidden="true" class="icon_search"></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="post-prev-title">
+                    <h3>{{ blogpost.title }}</h3>
+                </div>
+
+                {{ macros.blogpost_info(blogpost) }}
+
+                <div class="post-prev-text">
+                    {{ blogpost.body|safe }}
+
+                </div>
+
+                <div class="post-prev-more-cont clearfix">
+                    <div class="post-prev-more left">
+                        FACEBOOK LIKES AND SHARES
+                    </div>
+                    <div class="right" >
+                        <a href="#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUTHOR -->
+            {% set author = blogpost.author %}
+            <div class="post-author-container clearfix mb-50">
+
+                <div class="post-author-avatar">
+                    <img alt="ava" src="{{ author.photo.url }}" >
+                </div>
+
+                <div class="comment-content">
+
+                    <div class="comment-author">
+                        <a href="{{ author.get_absolute_url() }}">{{ author.full_name}}</a>
+                    </div>
+
+                    <p>{{ author.bio }}</p>
+
+                </div>
+            </div>
+
+            <!-- DIVIDER -->
+            <hr class="mt-0 mb-0">
+
+            <!-- WORK NAVIGATION -->
+            <div class="work-navigation clearfix">
+                <a href="#" class="work-prev"><span><span class="icon icon-arrows-left"></span>&nbsp;Prev</span></a>
+                <a href="#" class="work-all"><span>All Posts</span></a>
+                <a href="#" class="work-next"><span>Next&nbsp;<span class="icon icon-arrows-right"></span></span></a>
+            </div>
+
+            <!-- DIVIDER -->
+            <hr class="mt-0 mb-0">
+
+            <!-- RELATED POSTS -->
+            <h4 class="blog-page-title mt-50 mb-25">RELATED POSTS</h4>
+
+            <div class="row related-posts">
+
+                <!-- Post Item 1 -->
+                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" >
+
+                    <div class="post-prev-img">
+                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-1.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="post-prev-title">
+                        <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
+                    </div>
+
+                    <div class="post-prev-info">
+                        JULE 10<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                    </div>
+
+                </div>
+
+                <!-- Post Item 2 -->
+                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" data-wow-delay="200ms" >
+
+                    <div class="post-prev-img">
+                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-2.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="post-prev-title">
+                        <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
+                    </div>
+
+                    <div class="post-prev-info">
+                        MAY 11<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                    </div>
+
+
+                </div>
+
+                <!-- Post Item 3 -->
+                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" data-wow-delay="400ms" >
+
+                    <div class="post-prev-img">
+                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-3.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="post-prev-title">
+                        <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
+                    </div>
+
+                    <div class="post-prev-info">
+                        DECEMBER 21<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FACEBOOK COMMENTS -->
+
+            <div class="mb-30">
+                <div class="fb-comments" data-href="http://abcgomel.ru/amilia-demo/" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-sm-4 col-md-3 col-md-offset-1">
+
+            <!-- SEARCH -->
+            <div class="widget">
+                <form class="form-search widget-search-form" action="page-search-results.html" method="get">
+                    <input type="text" name="q" class="input-search-widget" placeholder="Search">
+                    <button class="" type="submit" title="Start Search">
+                        <span aria-hidden="true" class="icon_search"></span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- WIDGET -->
+            <div class="widget">
+
+                <h5 class="widget-title">Categories</h5>
+
+                <div class="widget-body">
+                    <ul class="clearlist widget-menu">
+                        <li>
+                            <a href="#" title="">Branding</a><small><span class="slash-divider">/</span> 10</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">Development</a><small><span class="slash-divider">/</span> 21</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">Technology </a><small><span class="slash-divider">/</span> 11</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">Social Media</a><small><span class="slash-divider">/</span> 16</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">Entertainment </a><small><span class="slash-divider">/</span> 8</small>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- WIDGET -->
+            <div class="widget">
+
+                <h5 class="widget-title">Recent posts</h5>
+
+                <div class="widget-body">
+                    <ul class="clearlist widget-posts">
+                        <li class="clearfix">
+                            <a href=""><img src="images/blog/recent/1.jpg" alt="" class="widget-posts-img"></a>
+                            <div class="widget-posts-descr">
+                                <a href="#" title="">TIME FOR MINIMALISM</a>
+                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <a href=""><img src="images/blog/recent/2.jpg" alt="" class="widget-posts-img"></a>
+                            <div class="widget-posts-descr">
+                                <a href="#" title="">NEW TRENDS IN WEB</a>
+                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <a href=""><img src="images/blog/recent/3.jpg" alt="" class="widget-posts-img"></a>
+                            <div class="widget-posts-descr">
+                                <a href="#" title="">THE SOUND OF LIFE</a>
+                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- WIDGET -->
+            <div class="widget">
+
+                <h5 class="widget-title">Tags</h5>
+
+                <div class="widget-body">
+                    <div class="tags">
+                        <a href="">Design</a>
+                        <a href="">Development</a>
+                        <a href="">Minimal</a>
+                        <a href="">Branding</a>
+                        <a href="">Unique</a>
+                        <a href="">Clean</a>
+                        <a href="">UI &amp; UX</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WIDGET -->
+            <div class="widget">
+                <h5 class="widget-title">Text Widget</h5>
+
+                <div class="widget-body">
+                    <p>Lorem ipsum dolor sit amet, cotur adcing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda</p>
+                </div>
+            </div>
+
+            <!-- WIDGET -->
+            <div class="widget">
+
+                <h5 class="widget-title">Archive</h5>
+
+                <div class="widget-body">
+                    <ul class="clearlist widget-menu">
+                        <li>
+                            <a href="#" title="">October 2015</a><small><span class="slash-divider">/</span> 10</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">July 2015</a><small><span class="slash-divider">/</span> 21</small>
+                        </li>
+                        <li>
+                            <a href="#" title="">June 2015 </a><small><span class="slash-divider">/</span> 11</small>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 {% endblock %}

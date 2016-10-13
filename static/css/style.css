@@ -4672,6 +4672,8 @@ blockquote.custom-blockquote:before {
 .post-author-avatar {
   margin-right:20px;
   float:left;
+  width: 140px;
+  height: auto;
 }
 .post-author-container .comment-author {
   margin-top:7px;
