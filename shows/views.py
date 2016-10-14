@@ -21,7 +21,7 @@ class ShowTemplateView(FlocTemplateView):
         context = super().get_context_data(**kwargs)
 
         context.update({
-            'upcoming_shows': Show.objects.upcoming(),
+            'upcoming_shows': Show.objects.upcoming().order_by('start_time'),
             'past_shows': self.get_past_shows(),
             'show_all': self.show_all,
         })

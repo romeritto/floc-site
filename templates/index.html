@@ -182,107 +182,17 @@
     </div>
 </div>
 
-<!-- BLOG 2 -->
+<!-- SHOWS -->
 <div class="page-section pt-110-cont">
     <div class="container">
 
         <div class="mb-50">
-            <h2 class="section-title pr-0">NAJBLIŽŠÍ <span class="bold">PROGRAM</span><a href="blog-right-sidebar.html" class="section-more right">PROGRAM</a>
+            <h2 class="section-title pr-0">NAJBLIŽŠÍ <span class="bold">PROGRAM</span><a href="{{ url('shows:show-list') }}" class="section-more right">PROGRAM</a>
                     </h2>
         </div>
 
         <div class="row">
-
-            <!-- Post Item 1 -->
-            <div class="col-md-12 wow fadeIn pb-30" >
-                <div class="row">
-
-                    <div class="col-md-4 blog2-post-title-cont">
-                        <div class="post-prev-date-cont">
-                            <span class="blog2-date-numb">21</span><span class="blog2-month">October</span>
-                            <div class="blog2-time">
-                                <i class="fa fa-clock-o blog2-clock" aria-hidden="true"></i>
-                                <span class="blog2-hour">19</span>
-                                <span class="blog2-minutes">00</span>
-                            </div>
-                        </div>
-                        <div class="post-prev-title">
-                            <h3><a href="blog-single-sidebar-right.html">čertice</a></h3>
-                            <div class="post-prev-info">
-                                <span class="fake-a" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Empírove Divadlo, Jesenského ulica 232, 920 01 Hlohovec">Empírove divadlo Hlohovec</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div class="blog2-post-prev-text">
-                            Čertice sa vracajú do Empírového divadla, príďte si spríjemniť sobotný večer do Kiodži s našim fraštáckymi divadelníkmi. Do mesta sa vracajú rybári, všetko však zapletie mladý Toffolo. Láska zamotá hlavy aj tvrdému Titta-Nanemu.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Post Item 2 -->
-            <div class="col-md-12 wow fadeIn pb-30" >
-                <div class="row">
-
-                    <div class="col-md-4 blog2-post-title-cont">
-                        <div class="post-prev-date-cont">
-                            <span class="blog2-date-numb">17</span><span class="blog2-month">August</span>
-                            <div class="blog2-time">
-                                <i class="fa fa-clock-o blog2-clock" aria-hidden="true"></i>
-                                <span class="blog2-hour">21</span>
-                                <span class="blog2-minutes">30</span>
-                            </div>
-                        </div>
-                        <div class="post-prev-title">
-                            <h3><a href="blog-single-sidebar-right.html">čertice</a></h3>
-                            <div class="post-prev-info">
-                                <span class="fake-a" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Empírove Divadlo, Jesenského ulica 232, 920 01 Hlohovec">Empírove divadlo Hlohovec</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div class="blog2-post-prev-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Post Item 3 -->
-            <div class="col-md-12 wow fadeIn pb-30" >
-                <div class="row">
-
-                    <div class="col-md-4 blog2-post-title-cont">
-                        <div class="post-prev-date-cont">
-                            <span class="blog2-date-numb">1</span><span class="blog2-month">August</span>
-                            <div class="blog2-time">
-                                <i class="fa fa-clock-o blog2-clock" aria-hidden="true"></i>
-                                <span class="blog2-hour">20</span>
-                                <span class="blog2-minutes">20</span>
-                            </div>
-                        </div>
-                        <div class="post-prev-title">
-                            <h3><a href="blog-single-sidebar-right.html">čertice</a></h3>
-                            <div class="post-prev-info">
-                                <span class="fake-a" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Empírove Divadlo, Jesenského ulica 232, 920 01 Hlohovec">Kultúrny dom Zlaté Húty</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div class="blog2-post-prev-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+            {{ macros.render_shows_or_message(upcoming_shows_limit_3) }}
         </div>
 
     </div>
@@ -290,7 +200,7 @@
 
 <!-- VIEW MORE  -->
 <div class="port-view-more-cont">
-    <a class="port-view-more" href="portfolio-4-col-masonry.html">CELÝ PROGRAM</a>
+    <a class="port-view-more" href="{{ url('shows:show-list') }}">CELÝ PROGRAM</a>
 </div>
 
 <!-- COUNTERS 1 -->
@@ -351,131 +261,17 @@
     <div class="container">
 
         <div class="mb-50">
-            <h2 class="section-title pr-0">LATEST <span class="bold">NEWS</span><a href="blog-right-sidebar.html" class="section-more right">OUR BLOG</a>
+            <h2 class="section-title pr-0">NAJNOVŠIE <span class="bold">SPRÁVY</span><a href="{{ url('blog:blogpost-list') }}" class="section-more right">NÁŠ BLOG</a>
                     </h2>
         </div>
 
         <div class="row">
 
-            <!-- Post Item 1 -->
-            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" >
-
-                <div class="post-prev-img">
-                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-1.jpg') }}" alt="img"></a>
+            {% for blogpost in recent_blogposts %}
+                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="{{ (loop.index - 1) * 200 }}ms" >
+                    {{ macros.blogpost_preview(blogpost) }}
                 </div>
-
-                <div class="post-prev-title">
-                    <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
-                </div>
-
-                <div class="post-prev-info">
-                    JULE 10<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                </div>
-
-                <div class="post-prev-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
-                </div>
-
-                <div class="post-prev-more-cont clearfix">
-                    <div class="post-prev-more left">
-                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
-                    </div>
-                    <div class="right" >
-                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                            <span aria-hidden="true" class="social_share"></span>
-                        </a>
-                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                            </li>
-                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Post Item 2 -->
-            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="200ms" >
-
-                <div class="post-prev-img">
-                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-2.jpg') }}" alt="img"></a>
-                </div>
-
-                <div class="post-prev-title">
-                    <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
-                </div>
-
-                <div class="post-prev-info">
-                    MAY 11<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                </div>
-
-                <div class="post-prev-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
-                </div>
-
-                <div class="post-prev-more-cont clearfix">
-                    <div class="post-prev-more left">
-                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
-                    </div>
-                    <div class="right" >
-                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                            <span aria-hidden="true" class="social_share"></span>
-                        </a>
-                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                            </li>
-                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Post Item 3 -->
-            <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="400ms" >
-
-                <div class="post-prev-img">
-                    <a href="blog-single-sidebar-right.html"><img src="{{ static('images/blog/post-prev-3.jpg') }}" alt="img"></a>
-                </div>
-
-                <div class="post-prev-title">
-                    <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
-                </div>
-
-                <div class="post-prev-info">
-                    DECEMBER 21<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                </div>
-
-                <div class="post-prev-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum.
-                </div>
-
-                <div class="post-prev-more-cont clearfix">
-                    <div class="post-prev-more left">
-                        <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
-                    </div>
-                    <div class="right" >
-                        <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                        <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                            <span aria-hidden="true" class="social_share"></span>
-                        </a>
-                        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                            </li>
-                            <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                            <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 

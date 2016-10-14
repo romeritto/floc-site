@@ -34,7 +34,7 @@
                 {% for actor in actor_objects %}
                     <div
                         class="mix {{ is_active(actor) }} member col-md-4 col-sm-4 wow fadeInUp"
-                        data-wow-delay="{{ (loop.index - 1) * 200}}ms"
+                        data-wow-delay="{{ (loop.index - 1) * 200 }}ms"
                         id="{{ actor.user.username }}"
                     >
                         <div class="member-image">

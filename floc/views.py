@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.views.generic.base import ContextMixin
 
 from blog.models import Blogpost
+from shows.models import Show
 
 
 class FlocContextMixin(ContextMixin):
@@ -9,7 +10,9 @@ class FlocContextMixin(ContextMixin):
         context = super().get_context_data(**kwargs)
 
         context['recent_blogposts'] = Blogpost.objects.all()[:3]
-
+        context['upcoming_shows_limit_3'] = Show.objects.upcoming().order_by(
+                                                'start_time'
+                                            )[:3]
         return context
 
 

@@ -39,11 +39,67 @@
 
         <div class="post-prev-more-cont clearfix">
             <div class="post-prev-more left">
-                <a href="#" class="blog-more">ZOBRAZIŤ VIAC</a>
+                <a href="{{ blogpost.get_absolute_url() }}" class="blog-more">ZOBRAZIŤ VIAC</a>
             </div>
             <div class="right" >
-                <a href="{{ blogpost.get_absolute_url()}}#diskusia" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count"><span class="fb-comments-count" data-href="{{ blogpost.get_domain_absolute_url() }}"></span></span></a>
+                <a href="{{ blogpost.get_absolute_url() }}" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count"><span class="fb-comments-count" data-href="{{ blogpost.get_domain_absolute_url() }}"></span></span></a>
             </div>
         </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro show_detail(show) %}
+<div class="col-md-12 wow fadeIn pb-30" >
+    <div class="row">
+
+        <div class="col-md-4 blog2-post-title-cont">
+            <div class="post-prev-date-cont">
+                <span class="blog2-date-numb">{{ _date(show.start_time|localtime, 'd') }}</span><span class="blog2-month">{{ _date(show.start_time|localtime, 'F')|capitalize }}</span>
+                <div class="blog2-time">
+                    <i class="fa fa-clock-o blog2-clock" aria-hidden="true"></i>
+                    <span class="blog2-hour">{{ _date(show.start_time|localtime, 'H') }}</span>
+                    <span class="blog2-minutes">{{ _date(show.start_time|localtime, 'i') }}</span>
+                </div>
+            </div>
+            <div class="post-prev-title">
+                <h3><a href="{{ show.play.get_absolute_url() }}">{{ show.play.name }}</a></h3>
+                <div class="post-prev-info">
+                    <span class="fake-a" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ show.location_verbose }}">
+                        {{ show.location }}
+                    </span>
+                </div>
+                <div>
+                    <span class="icon icon-ecommerce-ticket black"></span>
+                    <span class="ticket-price">
+                        {% if show.price == 0.00 %}
+                            Vstupné dobrovoľné
+                        {% else %}
+                            Cena lístka: {{ show.price }}€
+                        {% endif %}
+                    </span>
+               </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="blog2-post-prev-text">
+                {{ show.description }}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endmacro %}
+
+{% macro render_shows_or_message(show_list) %}
+    {% if show_list %}
+        {% for show in show_list %}
+            {{ show_detail(show) }}
+        {% endfor %}
+    {% else %}
+        <p class="no-upcoming">
+            Práve nemáme naplánované žiadne vystúpenie.
+            <a href="{{ url('contact') }}"> Chceli by ste nás vidieť vo vašej obci?</a>
+        </p>
     {% endif %}
 {% endmacro %}
