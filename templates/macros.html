@@ -42,10 +42,7 @@
                 <a href="#" class="blog-more">ZOBRAZIŤ VIAC</a>
             </div>
             <div class="right" >
-                <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                <a href="#" class="post-prev-count">
-                    <span aria-hidden="true" class="social_facebook"></span>
-                </a>
+                <a href="{{ blogpost.get_absolute_url()}}#diskusia" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count"><span class="fb-comments-count" data-href="{{ blogpost.get_domain_absolute_url() }}"></span></span></a>
             </div>
         </div>
     {% endif %}

@@ -2067,7 +2067,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   font-family: 'Lato',Arial,Helvetica,sans-serif;
   color:#fff;
   font-size:18px;
-  line-height:18px;
+  line-height:30px;
   font-weight:normal;
   letter-spacing:4px;
   transition: all .3s ease 0s;
@@ -10150,6 +10150,24 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     padding: 0 7px;
   }
 
+}
+
+.mobile-hide {
+   display: block;
+}
+
+.mobile-show {
+   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+   .mobile-hide {
+      display: none;
+   }
+
+   .mobile-show {
+      display: block;
+   }
 }
 
 /* #MAGAZINE NEW ***************************************************/
