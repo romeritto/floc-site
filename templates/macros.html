@@ -21,7 +21,7 @@
     </div>
 {% endmacro %}
 
-{% macro blogpost_preview(blogpost) %}
+{% macro blogpost_preview(blogpost, verbose=True) %}
     <div class="post-prev-img">
         <a href="{{ blogpost.get_absolute_url() }}"><img src="{{ get_thumbnail(blogpost.image, '600').url }}" alt="img"></a>
     </div>
@@ -32,19 +32,21 @@
 
     {{ blogpost_info(blogpost) }}
 
-    <div class="post-prev-text">
-        {{ blogpost.intro }}
-    </div>
+    {% if verbose %}
+        <div class="post-prev-text">
+            {{ blogpost.intro }}
+        </div>
 
-    <div class="post-prev-more-cont clearfix">
-        <div class="post-prev-more left">
-            <a href="#" class="blog-more">ZOBRAZIŤ VIAC</a>
+        <div class="post-prev-more-cont clearfix">
+            <div class="post-prev-more left">
+                <a href="#" class="blog-more">ZOBRAZIŤ VIAC</a>
+            </div>
+            <div class="right" >
+                <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                <a href="#" class="post-prev-count">
+                    <span aria-hidden="true" class="social_facebook"></span>
+                </a>
+            </div>
         </div>
-        <div class="right" >
-            <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-            <a href="#" class="post-prev-count">
-                <span aria-hidden="true" class="social_facebook"></span>
-            </a>
-        </div>
-    </div>
+    {% endif %}
 {% endmacro %}

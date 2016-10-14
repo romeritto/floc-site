@@ -5,3 +5,5 @@ DEBUG = False
 MEDIA_ROOT = '/var/www/floc.sk/media/'
 
 MEDIA_URL = '/media/'
+
+DOMAIN = 'https://floc.sk'

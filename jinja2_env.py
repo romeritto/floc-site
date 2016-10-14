@@ -2,6 +2,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import reverse
 from django.template.defaultfilters import date as _date
 from django.utils.timezone import template_localtime
+from django.conf import settings
 from sorl.thumbnail.shortcuts import get_thumbnail
 
 from jinja2 import Environment
@@ -20,6 +21,7 @@ def environment(**options):
         'startswith': startswith,
         'get_thumbnail': get_thumbnail,
         '_date': _date,
+        'settings': settings,
     })
 
     env.filters.update({

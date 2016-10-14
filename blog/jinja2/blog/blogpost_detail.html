@@ -12,7 +12,7 @@
 
 {% block content %}
 <!-- COTENT CONTAINER -->
-<div class="container p-140-cont">
+<div class="container pt-110-b-80-cont">
     <div class="row">
 
         <!-- CONTENT -->
@@ -82,64 +82,18 @@
 
             <div class="row related-posts">
 
-                <!-- Post Item 1 -->
-                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" >
-
-                    <div class="post-prev-img">
-                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-1.jpg" alt="img"></a>
+                {% for blogpost in related_blogposts %}
+                    <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50">
+                        {{ macros.blogpost_preview(blogpost, verbose=False) }}
                     </div>
-
-                    <div class="post-prev-title">
-                        <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
-                    </div>
-
-                    <div class="post-prev-info">
-                        JULE 10<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                    </div>
-
-                </div>
-
-                <!-- Post Item 2 -->
-                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" data-wow-delay="200ms" >
-
-                    <div class="post-prev-img">
-                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-2.jpg" alt="img"></a>
-                    </div>
-
-                    <div class="post-prev-title">
-                        <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
-                    </div>
-
-                    <div class="post-prev-info">
-                        MAY 11<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                    </div>
-
-
-                </div>
-
-                <!-- Post Item 3 -->
-                <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50" data-wow-delay="400ms" >
-
-                    <div class="post-prev-img">
-                        <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-3.jpg" alt="img"></a>
-                    </div>
-
-                    <div class="post-prev-title">
-                        <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
-                    </div>
-
-                    <div class="post-prev-info">
-                        DECEMBER 21<span class="slash-divider">/</span><a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel">JOHN DOE</a>
-                    </div>
-
-                </div>
+                {% endfor %}
 
             </div>
 
             <!-- FACEBOOK COMMENTS -->
 
             <div class="mb-30">
-                <div class="fb-comments" data-href="http://abcgomel.ru/amilia-demo/" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
+                <div class="fb-comments" data-href="{{ settings.DOMAIN + blogpost.get_absolute_url() }}" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
             </div>
 
         </div>

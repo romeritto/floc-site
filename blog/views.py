@@ -20,5 +20,7 @@ class BlogpostDetailView(FlocContextMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        #context['related_posts'] = Blogpost.filter
+        context['related_blogposts'] =  Blogpost.objects.filter(
+                                        pk__gte=self.object.pk-3
+                                    ).exclude(pk=self.object.pk)[:3]
         return context
