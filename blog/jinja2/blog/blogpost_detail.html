@@ -47,10 +47,10 @@
 
                 <div class="post-prev-more-cont clearfix">
                     <div class="post-prev-more left">
-                        FACEBOOK LIKES AND SHARES
+                        <div class="fb-like" data-href="{{ blogpost.get_domain_absolute_url() }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                     </div>
                     <div class="right" >
-                        <a href="#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
+                        <a href="#diskusia" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count"><span class="fb-comments-count" data-href="{{ blogpost.get_domain_absolute_url() }}"></span></span></a>
                     </div>
                 </div>
             </div>
@@ -92,8 +92,8 @@
 
             <!-- FACEBOOK COMMENTS -->
 
-            <div class="mb-30">
-                <div class="fb-comments" data-href="{{ settings.DOMAIN + blogpost.get_absolute_url() }}" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
+            <div class="mb-30" id="diskusia">
+                <div class="fb-comments" data-href="{{ blogpost.get_domain_absolute_url() }}" data-numposts="5" data-colorscheme="light" data-width="100%"></div>
             </div>
 
         </div>

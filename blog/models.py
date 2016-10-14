@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 from django.urls import reverse
+from django.conf import settings
 
 from tinymce.models import HTMLField
 from sorl.thumbnail import ImageField
@@ -74,3 +75,6 @@ class Blogpost(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:blogpost-detail', kwargs={'slug': self.slug})
+
+    def get_domain_absolute_url(self):
+        return settings.DOMAIN + self.get_absolute_url()
