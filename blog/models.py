@@ -6,6 +6,7 @@ from django.urls import reverse
 from tinymce.models import HTMLField
 from sorl.thumbnail import ImageField
 
+from .managers import BlogpostManager
 from plays.models import Play
 from actors.models import Actor
 
@@ -52,6 +53,8 @@ class Blogpost(models.Model):
         default=timezone.now,
     )
     modification_time = models.DateTimeField(auto_now=True)
+
+    objects = BlogpostManager()
 
     class Meta:
         verbose_name = u'Článok'

@@ -17,3 +17,8 @@ class BlogpostListView(FlocContextMixin, ListView):
 class BlogpostDetailView(FlocContextMixin, DetailView):
     model = Blogpost
     context_object_name = 'blogpost'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        #context['related_posts'] = Blogpost.filter
+        return context

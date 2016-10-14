@@ -66,7 +66,7 @@
                 <div class="comment-content">
 
                     <div class="comment-author">
-                        <a href="{{ author.get_absolute_url() }}">{{ author.full_name}}</a>
+                        <a href="{{ author.get_absolute_url() }}">{{ author.full_name }}</a>
                     </div>
 
                     <p>{{ author.bio }}</p>
@@ -77,18 +77,8 @@
             <!-- DIVIDER -->
             <hr class="mt-0 mb-0">
 
-            <!-- WORK NAVIGATION -->
-            <div class="work-navigation clearfix">
-                <a href="#" class="work-prev"><span><span class="icon icon-arrows-left"></span>&nbsp;Prev</span></a>
-                <a href="#" class="work-all"><span>All Posts</span></a>
-                <a href="#" class="work-next"><span>Next&nbsp;<span class="icon icon-arrows-right"></span></span></a>
-            </div>
-
-            <!-- DIVIDER -->
-            <hr class="mt-0 mb-0">
-
             <!-- RELATED POSTS -->
-            <h4 class="blog-page-title mt-50 mb-25">RELATED POSTS</h4>
+            <h4 class="blog-page-title mt-50 mb-25">ĎALŠIE PRÍSPEVKY</h4>
 
             <div class="row related-posts">
 
@@ -157,73 +147,30 @@
         <!-- SIDEBAR -->
         <div class="col-sm-4 col-md-3 col-md-offset-1">
 
-            <!-- SEARCH -->
-            <div class="widget">
-                <form class="form-search widget-search-form" action="page-search-results.html" method="get">
-                    <input type="text" name="q" class="input-search-widget" placeholder="Search">
-                    <button class="" type="submit" title="Start Search">
-                        <span aria-hidden="true" class="icon_search"></span>
-                    </button>
-                </form>
-            </div>
-
             <!-- WIDGET -->
             <div class="widget">
 
-                <h5 class="widget-title">Categories</h5>
-
-                <div class="widget-body">
-                    <ul class="clearlist widget-menu">
-                        <li>
-                            <a href="#" title="">Branding</a><small><span class="slash-divider">/</span> 10</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">Development</a><small><span class="slash-divider">/</span> 21</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">Technology </a><small><span class="slash-divider">/</span> 11</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">Social Media</a><small><span class="slash-divider">/</span> 16</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">Entertainment </a><small><span class="slash-divider">/</span> 8</small>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- WIDGET -->
-            <div class="widget">
-
-                <h5 class="widget-title">Recent posts</h5>
+                <h5 class="widget-title">Posledné príspevky</h5>
 
                 <div class="widget-body">
                     <ul class="clearlist widget-posts">
-                        <li class="clearfix">
-                            <a href=""><img src="images/blog/recent/1.jpg" alt="" class="widget-posts-img"></a>
-                            <div class="widget-posts-descr">
-                                <a href="#" title="">TIME FOR MINIMALISM</a>
-                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
-                            </div>
-                        </li>
-
-                        <li class="clearfix">
-                            <a href=""><img src="images/blog/recent/2.jpg" alt="" class="widget-posts-img"></a>
-                            <div class="widget-posts-descr">
-                                <a href="#" title="">NEW TRENDS IN WEB</a>
-                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
-                            </div>
-                        </li>
-
-                        <li class="clearfix">
-                            <a href=""><img src="images/blog/recent/3.jpg" alt="" class="widget-posts-img"></a>
-                            <div class="widget-posts-descr">
-                                <a href="#" title="">THE SOUND OF LIFE</a>
-                                <div>21 Jule<span class="slash-divider">/</span> John Doe</div>
-                            </div>
-                        </li>
+                        {% for blogpost in recent_blogposts %}
+                            <li class="clearfix">
+                                <a href="{{ blogpost.get_absolute_url() }}">
+                                    <img
+                                        src="{{ get_thumbnail(blogpost.image, '85x70', crop='center').url }}"
+                                        alt="Fotka pre {{ blogpost.title }}"
+                                        class="widget-posts-img"
+                                    >
+                                </a>
+                                <div class="widget-posts-descr">
+                                    <a href="{{ blogpost.get_absolute_url() }}">
+                                        <span class="uppercase">{{ blogpost.title }}</span>
+                                    </a>
+                                    {{ macros.blogpost_info(blogpost) }}
+                                </div>
+                            </li>
+                        {% endfor %}
 
                     </ul>
                 </div>
@@ -232,51 +179,11 @@
 
             <!-- WIDGET -->
             <div class="widget">
-
-                <h5 class="widget-title">Tags</h5>
-
-                <div class="widget-body">
-                    <div class="tags">
-                        <a href="">Design</a>
-                        <a href="">Development</a>
-                        <a href="">Minimal</a>
-                        <a href="">Branding</a>
-                        <a href="">Unique</a>
-                        <a href="">Clean</a>
-                        <a href="">UI &amp; UX</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- WIDGET -->
-            <div class="widget">
-                <h5 class="widget-title">Text Widget</h5>
+                <h5 class="widget-title">Zaujimavosť</h5>
 
                 <div class="widget-body">
                     <p>Lorem ipsum dolor sit amet, cotur adcing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda</p>
                 </div>
-            </div>
-
-            <!-- WIDGET -->
-            <div class="widget">
-
-                <h5 class="widget-title">Archive</h5>
-
-                <div class="widget-body">
-                    <ul class="clearlist widget-menu">
-                        <li>
-                            <a href="#" title="">October 2015</a><small><span class="slash-divider">/</span> 10</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">July 2015</a><small><span class="slash-divider">/</span> 21</small>
-                        </li>
-                        <li>
-                            <a href="#" title="">June 2015 </a><small><span class="slash-divider">/</span> 11</small>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
 
         </div>

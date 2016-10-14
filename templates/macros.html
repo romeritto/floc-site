@@ -14,7 +14,8 @@
 
 {% macro blogpost_info(blogpost) %}
     <div class="post-prev-info">
-        {{ _date(blogpost.posted|localtime, "d F") }}
+        {{ _date(blogpost.posted|localtime, "d") }}
+        {{ _date(blogpost.posted|localtime, "F")|capitalize }}
         <span class="slash-divider">/</span>
         <a href="{{ blogpost.author.get_absolute_url() }}">{{ blogpost.author.full_name }}</a>
     </div>
