@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
@@ -169,3 +170,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'extended_valid_elements': 'noindex',
     'custom_elements': 'noindex',
 }
+
+# The date when theater was established
+
+ESTABLISHMENT_DATE = datetime.datetime(2015, 8, 8, 0, 0)

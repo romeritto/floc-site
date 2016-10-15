@@ -212,40 +212,67 @@
             <!-- Item -->
             <div class="col-xs-6 col-sm-3">
                 <div class="count-number">
-                    75
+                    {{ counters['actors'] }}
                 </div>
                 <div class="count-descr">
-                    <span class="count-title">AWARDS WINNING</span>
+                    <span class="count-title">
+                        <a href="{{ url('actors:actor-list') }}">
+                            HERCOV
+                        </a>
+                    </span>
                 </div>
             </div>
 
             <!-- Item -->
             <div class="col-xs-6 col-sm-3">
                 <div class="count-number">
-                 450
+                    {{ counters['plays'] }}
                 </div>
                 <div class="count-descr">
-                    <span class="count-title">HAPPY CLIENTS</span>
+                    <span class="count-title">
+                        <a href="{{ url('plays:play-list') }}">
+                            {% if counters['plays'] == 1 %}
+                                INSCENÁCIA
+                            {% elif counters['plays'] <= 4 %}
+                                INSCENÁCIE
+                            {% else %}
+                                INSCENÁCIÍ
+                            {% endif %}
+                        </a>
+                    </span>
                 </div>
             </div>
 
             <!-- Item -->
             <div class="col-xs-6 col-sm-3">
                 <div class="count-number">
-                    151
+                    {{ counters['shows'] }}
                 </div>
                 <div class="count-descr">
-                    <span class="count-title">PROJECTS DONE</span>
+
+                    <span class="count-title">
+                        <a href="{{ url('shows:show-list') }}">
+                            {% if counters['shows'] == 1 %}
+                                VUSTÚPENIE
+                            {% elif counters['plays'] <= 4 %}
+                                VYSTÚPENIA
+                            {% else %}
+                                VYSTÚPENÍ
+                            {% endif %}
+                        </a>
+                    </span>
                 </div>
             </div>
 
             <!-- Item -->
             <div class="col-xs-6 col-sm-3">
                 <div class="count-number">
-                 768
+                    {{ counters['hours'] }}
                 </div>
                 <div class="count-descr">
-                    <span class="count-title">HOURS OF CODE</span>
+                    <span class="count-title">
+                        HODÍN PRÁCE
+                    </span>
                 </div>
             </div>
 
