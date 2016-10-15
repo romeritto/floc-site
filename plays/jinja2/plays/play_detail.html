@@ -111,34 +111,7 @@
 
                 {% for rel_play in other_plays %}
                     <li class="port-item mix" style="position: absolute; left: {{ loop.index*287 }}px; top: 0px;">
-
-                        <div class="port-img-overlay">
-                            <img
-                                class="port-main-img"
-                                src="{{ rel_play.image_preview.url }}"
-                                alt="{{ rel_play.name }} + náhľad"
-                            >
-                        </div>
-
-                        <div class="port-overlay-cont">
-                            <div class="port-title-cont ">
-                                <h3>
-                                    <a href="{{ rel_play.get_absolute_url() }}">
-                                        {{ rel_play.name }}
-                                    </a>
-                                </h3>
-                                <span>{{ rel_play.author }}</span>
-                            </div>
-                            <div class="port-btn-cont overview">
-                            <p>
-                                <b>Réžia:</b>
-                                <a class="director" href="{{ rel_play.director.get_absolute_url() }}">
-                                    {{ rel_play.director.full_name }}
-                                </a>
-                            </p>
-                            </div>
-
-                        </div>
+                        {{ macros.play_preview(rel_play, verbose=False) }}
                     </li>
                 {% endfor %}
 

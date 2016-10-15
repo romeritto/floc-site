@@ -10,57 +10,33 @@
 {% endblock %}
 
 {% block content %}
-<div class="grey-light-bg clearfix">
 
-    <div class="container white-bg plr-30 pt-50 pb-80 ">
+<div class="container white-bg plr-30 pt-50 pb-80">
 
-        <div class="relative">
-            <!-- PORTFOLIO FILTER -->
-            <div class="port-filter ">
-                <a href="#" class="filter active" data-filter="*">Všetky</a>
-                {% for year in play_years %}
-                    <a href="#" class="filter" data-filter=".year-{{ year }}">{{ year }}</a>
-                {% endfor %}
-            </div>
-
-            <!-- ITEMS GRID -->
-            <ul class="port-grid port-grid-2 clearfix" id="items-grid">
-
-                {% for play in play_objects %}
-                    <li class="port-item mix year-{{ play.premiere_date.year }}">
-                        <div class="port-img-overlay">
-                            <img class="port-main-img" src="{{ play.image_preview.url }}" alt="{{ play.name }} náhľad">
-                        </div>
-
-                        <div class="port-overlay-cont" >
-                            <div class="port-title-cont ">
-                                <h3>
-                                    <a href="{{ play.get_absolute_url() }}">
-                                        {{ play.name }}
-                                    </a>
-                                </h3>
-                                <span>{{ play.author }}</span>
-                            </div>
-                            <div class="port-btn-cont overview">
-                            <p>
-                                <b>Réžia:</b>
-                                <a class="director" href="{{ play.director.get_absolute_url() }}">
-                                    {{ play.director.full_name }}
-                                </a>
-                                <br>
-                                <b>Premiéra:</b>
-                                {{ _date(play.premiere_date|localtime, "d. m. Y") }}
-                            </p>
-                            </div>
-                        </div>
-                    </li>
-                {% endfor %}
-
-            </ul>
-
+    <div class="relative">
+        <!-- PORTFOLIO FILTER -->
+        <div class="port-filter ">
+            <a href="#" class="filter active" data-filter="*">Všetky</a>
+            {% for year in play_years %}
+                <a href="#" class="filter" data-filter=".year-{{ year }}">{{ year }}</a>
+            {% endfor %}
         </div>
+
+        <!-- ITEMS GRID -->
+        <ul class="port-grid port-grid-2 port-grid-gut clearfix" id="items-grid">
+
+            {% for play in play_objects %}
+
+                <li class="port-item mix year-{{ play.premiere_date.year }}">
+                    {{ macros.play_preview(play) }}
+                </li>
+
+            {% endfor %}
+
+        </ul>
 
     </div>
 
 </div>
+
 {% endblock %}

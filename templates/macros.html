@@ -103,3 +103,23 @@
         </p>
     {% endif %}
 {% endmacro %}
+
+{% macro play_preview(play, verbose=True) %}
+    <div class="port-img-overlay">
+        <img class="port-main-img" src="{{ play.image_preview.url }}" alt="{{ play.name }} náhľad">
+    </div>
+
+    <div class="port-info-cont">
+        <h3>
+            <a href="{{ play.get_absolute_url() }}">
+                {{ play.name }}
+            </a>
+        </h3>
+        <span class="author">{{ play.author }}</span>
+
+        {% if verbose %}
+            <p>{{ play.short_description }}</p>
+        {% endif %}
+
+    </div>
+{% endmacro %}

@@ -37,7 +37,8 @@ class Play(models.Model):
     )
     short_description = models.CharField(
         verbose_name=u'krátky popis',
-        max_length=255,
+        help_text=u'Použite najviac 170 znakov.',
+        max_length=170,
     )
     full_description = models.TextField(
         verbose_name=u'dlhý popis',

@@ -1800,10 +1800,10 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 	width: 20%;
 }
 .port-grid.port-grid-gut{
-  margin: 0 0 0 -15px;
+  margin: 0 0 0 -20px;
 }
 .port-grid.port-grid-gut .port-item{
-  padding: 0 0 15px 15px;
+  padding: 0 0 20px 20px;
 }
 .port-grid .port-item > a{
 	display: block;
@@ -1907,7 +1907,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   transition: all .3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 .port-main-img {
-  transition: all .3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+  transition: all .5s linear;
 }
 .lightbox-item {
   position:relative;
@@ -1941,15 +1941,17 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   opacity: 1;
 }
 .port-item:hover .port-main-img, .lightbox-item:hover .port-main-img {
-  -webkit-transform: scale(1.3) translateZ(0);
-	-moz-transform: scale(1.3) translateZ(0);
-	-o-transform: scale(1.3) translateZ(0);
-	-ms-transform: scale(1.3) translateZ(0);
-	transform: scale(1.3) translateZ(0);
+  -webkit-transform: scale(1.2) translateZ(0);
+	-moz-transform: scale(1.2) translateZ(0);
+	-o-transform: scale(1.2) translateZ(0);
+	-ms-transform: scale(1.2) translateZ(0);
+	transform: scale(1.2) translateZ(0);
 }
+/*
 .port-item:hover .port-img-overlay:after, .lightbox-item:hover .port-img-overlay:after {
   background: rgba(16,16,16, .85);
 }
+*/
 .port-item .port-img-overlay:after , .lightbox-item .port-img-overlay:after  {
   content: "";
   display: block;
@@ -2094,6 +2096,34 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .mobile .port-overlay-cont{
   display:none;
   visibility:hidden;
+}
+.port-info-cont {
+  margin: 0px;
+  padding: 15px;
+  border-bottom: 1px solid #c3c3c3;
+  background: #f7f7f7;
+}
+.port-item:hover .port-info-cont {
+  border-bottom: 3px solid #c3c3c3;
+}
+.port-info-cont h3 {
+    font-size: 16px;
+    margin: 0px;
+    text-transform: uppercase;
+    line-height: 26px;
+    font-weight: 600;
+}
+.port-info-cont h3 a {
+  color: #53565B;
+}
+.port-info-cont h3 a:hover {
+  color: #1D1D1D;
+}
+.port-info-cont .author {
+  font-size: 13px;
+}
+.port-info-cont p {
+  margin: 10px 0 ;
 }
 
 /* #PORTFOLIO SINGLE #NEW
