@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django_reverse_admin import ReverseModelAdmin
 
-from .models import Actor
+from .models import Actor, Quote
 
 
 class ActorModelAdmin(ReverseModelAdmin):
@@ -14,3 +14,5 @@ class ActorModelAdmin(ReverseModelAdmin):
     fields = ['bio', 'jobs', 'photo']
 
 admin.site.register(Actor, ActorModelAdmin)
+
+admin.site.register(Quote)

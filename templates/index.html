@@ -282,92 +282,45 @@
 <div class="page-section pt-50-b-30-cont owl-white-bg  fullwidth-slider">
     <div class="owl-white-bg fullwidth-slider p-50-cont">
 
-        <!-- Slide Item -->
-        <div class="container relative">
-            <div class="row">
+        {% for quote in actor_quotes %}
 
-                <div class="col-md-7">
-                    <blockquote class="testimonial-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, quis, possimus alias!</p>
-                    </blockquote>
-                </div>
+            {% set actor = quote.author %}
 
-                <div class="col-md-4 col-md-offset-1">
-                    <div class="ts-author-cont">
-                        <div class="ts-author-info">
-                            <div class="ts-name">
-                                <span class="bold">Amanda Eniston</span>
+            <div class="container relative">
+                <div class="row">
+
+                    <div class="col-md-7">
+                        <blockquote class="testimonial-2">
+                            <p>{{ quote.text }}</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="ts-author-cont">
+                            <div class="ts-author-info">
+                                <div class="ts-name">
+                                    <a href="{{ actor.get_absolute_url() }}">
+                                        <span class="bold">{{ actor.full_name }}</span>
+                                    </a>
+                                </div>
+                                <div class="ts-type">{{ actor.jobs }}</div>
                             </div>
-                            <div class="ts-type">CEO Company</div>
-                        </div>
-                        <div class="ts-author-img">
-                            <img src="{{ static('images/ts-author-2.png') }}" alt="photo" >
+                            <div class="ts-author-img">
+                                <img src="{{ quote.author.photo.url }}" alt="photo" >
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Slide Item -->
-        <div class="container relative">
-            <div class="row">
-
-                <div class="col-md-7">
-                    <blockquote class="testimonial-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, quis, possimus alias!</p>
-                    </blockquote>
-                </div>
-
-                <div class="col-md-4 col-md-offset-1">
-                    <div class="ts-author-cont">
-                        <div class="ts-author-info">
-                            <div class="ts-name">
-                                <span class="bold">Jessica Holmes</span>
-                            </div>
-                            <div class="ts-type">CEO Company</div>
-                        </div>
-                        <div class="ts-author-img">
-                            <img src="{{ static('images/ts-author.png') }}" alt="photo" >
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Slide Item -->
-        <div class="container relative">
-            <div class="row">
-
-                <div class="col-md-7">
-                    <blockquote class="testimonial-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, quis, possimus alias!</p>
-                    </blockquote>
-                </div>
-
-                <div class="col-md-4 col-md-offset-1">
-                    <div class="ts-author-cont">
-                        <div class="ts-author-info">
-                            <div class="ts-name">
-                                <span class="bold">John Doe</span>
-                            </div>
-                            <div class="ts-type">CEO Company</div>
-                        </div>
-                        <div class="ts-author-img">
-                            <img src="{{ static('images/ts-author-3.png') }}" alt="photo" >
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 </div>
 
 <!-- VIEW MORE  -->
 <div class="port-view-more-cont">
-    <a class="port-view-more" href="portfolio-4-col-masonry.html">VŠETCI HERCI</a>
+    <a class="port-view-more" href="{{ url('actors:actor-list') }}">VŠETCI HERCI</a>
 </div>
 
 {% endblock %}

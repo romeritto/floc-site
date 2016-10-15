@@ -90,8 +90,8 @@
                 <h4 class="blog-page-title mt-0 mb-40">Z BLOGU</h4>
                 <div class="row">
                     {% for blogpost in blogposts %}
-                        <div class="col-md-6 col-sm-6">
-                            {{ macros.blogpost_preview(blogpost) }}
+                        <div class="col-md-6 col-sm-6 mb-40">
+                            {{ macros.blogpost_preview(blogpost, verbose=False) }}
                         </div>
                     {% endfor %}
                 </div>

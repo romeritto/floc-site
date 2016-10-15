@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from django.urls import reverse
 
-from actors.managers import ActorManager
+from actors.managers import ActorManager, QuoteManager
 
 
 class Actor(models.Model):
@@ -14,7 +14,7 @@ class Actor(models.Model):
         primary_key=True,
     )
     jobs = models.CharField(
-        verbose_name=u'Úlohy',
+        verbose_name=u'úlohy',
         help_text=u'Vymenujte úlohy daného človeka. Napr. Režisér a herec',
         max_length=255,
         default=u'Herec',
@@ -56,3 +56,24 @@ class Actor(models.Model):
 
     def get_absolute_url(self):
         return reverse('actors:actor-list')+'#'+self.user.username
+
+
+class Quote(models.Model):
+    author = models.ForeignKey(Actor, verbose_name=u'autor')
+    text = models.CharField(
+        verbose_name=u'text',
+        help_text=(
+            u'Text výroku, ktorý sa zobrazí na úvodnej strane. '
+            u'Maximálna dĺžka je 200 znakov',
+        ),
+        max_length=200,
+    )
+
+    objects = QuoteManager()
+
+    class Meta:
+        verbose_name = u'Výrok'
+        verbose_name_plural = u'Výroky'
+
+    def __str__(self):
+        return self.text

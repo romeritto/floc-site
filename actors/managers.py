@@ -40,3 +40,8 @@ class ActorManager(models.Manager):
         self.model(user=user, **kwargs).full_clean()
 
         return super().create(user=user, **kwargs)
+
+
+class QuoteManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().select_related('author', 'author__user')
