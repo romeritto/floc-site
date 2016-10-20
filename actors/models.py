@@ -41,7 +41,7 @@ class Actor(models.Model):
         verbose_name = u'Herec'
         verbose_name_plural = u'Herci'
 
-        ordering = ['-user']
+        ordering = ['user']
 
     @property
     def full_name(self):

@@ -57,4 +57,3 @@ class Show(models.Model):
             self.start_time.strftime('%b %d %Y %H:%M') +
             ')'
         )
-
