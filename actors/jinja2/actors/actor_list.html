@@ -43,7 +43,7 @@
                         <h3>{{ actor.full_name }}</h3>
                         <span class="jobs">{{ actor.jobs }}</span>
                         <div class="actor-bio">
-                            <p class="mb-30">{{ actor.bio }}</p>
+                            <p class="mb-30">{{ actor.bio|safe }}</p>
                         </div>
                     </div>
                 {% endfor %}

@@ -69,7 +69,7 @@
                         <a href="{{ author.get_absolute_url() }}">{{ author.full_name }}</a>
                     </div>
 
-                    <p>{{ author.bio }}</p>
+                    <p>{{ author.bio|safe }}</p>
 
                 </div>
             </div>
