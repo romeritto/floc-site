@@ -24,7 +24,7 @@ class Show(models.Model):
         max_length=255,
     )
     description = models.CharField(
-        verbose_name=u'krátky popis',
+        verbose_name=u'popis',
         help_text=u'Približne 2-3 vety, jedinečné pre každé predstavenie.',
         max_length=255,
     )

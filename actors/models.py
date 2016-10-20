@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from django.urls import reverse
+from tinymce.models import HTMLField
 
 from actors.managers import ActorManager, QuoteManager
 
@@ -19,9 +20,9 @@ class Actor(models.Model):
         max_length=255,
         default=u'Herec',
     )
-    bio = models.TextField(
+    bio = HTMLField(
         verbose_name=u'biografia',
-        help_text=u'Popis herca.',
+        help_text=u'Popis herca. Použite 300-400 znakov.',
     )
     photo = ResizedImageField(
         verbose_name=u'fotka',
@@ -32,7 +33,6 @@ class Actor(models.Model):
         upload_to='actors/',
         size=[336, 376],
         crop=['middle', 'center'],
-        blank=True,
     )
 
     objects = ActorManager()

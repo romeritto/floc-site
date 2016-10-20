@@ -13,12 +13,10 @@ class BlogpostAdminForm(forms.ModelForm):
 
     class Meta:
         model = Blogpost
-        fields = '__all__'
+        fields = ['title', 'author', 'intro', 'body', 'image', 'related_play']
 
 
 class BlogpostAdmin(admin.ModelAdmin):
-    fields = ['title', 'author', 'intro', 'body', 'image', 'related_play']
-
     form = BlogpostAdminForm
 
 admin.site.register(Blogpost, BlogpostAdmin)

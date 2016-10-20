@@ -2,6 +2,7 @@ from django.db import models
 from django_resized import ResizedImageField
 from django.utils.text import slugify
 from django.urls import reverse
+from tinymce.models import HTMLField
 
 from actors.models import Actor
 
@@ -33,14 +34,13 @@ class Play(models.Model):
         upload_to='plays/previews',
         size=[650, 418],
         crop=['middle', 'center'],
-        blank=True,
     )
     short_description = models.CharField(
         verbose_name=u'krátky popis',
         help_text=u'Použite najviac 170 znakov.',
         max_length=170,
     )
-    full_description = models.TextField(
+    full_description = HTMLField(
         verbose_name=u'dlhý popis',
     )
     actors = models.ManyToManyField(
