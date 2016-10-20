@@ -27,23 +27,18 @@ class PlayDetailView(FlocContextMixin, DetailView):
     context_object_name = 'play'
 
     def get_context_data(self, **kwargs):
-        def get_blogposts():
-            related = self.object.blogposts.all()
-            if related:
-                return related
-            else:
-                return Blogpost.objects.all()[:2]
-
         context = super().get_context_data(**kwargs)
 
-        context['characters'] = PlayCharacter.objects.select_related(
-                                    'actor',
-                                    'actor__user',
-                                ).filter(play=self.object)
-        context['other_plays'] = Play.objects.select_related(
-                                    'director',
-                                    'director__user',
-                                ).exclude(pk=self.object.id)[:4]
-        context['blogposts'] = get_blogposts()
+        context.update({
+            'characters': PlayCharacter.objects.select_related(
+                            'actor',
+                            'actor__user',
+                        ).filter(play=self.object),
+            'other_plays': Play.objects.select_related(
+                            'director',
+                            'director__user',
+                        ).exclude(pk=self.object.id)[:4],
+            'related_blogposts': self.object.blogposts.all(),
+        })
 
         return context
