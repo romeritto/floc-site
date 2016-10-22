@@ -1,5 +1,6 @@
 import datetime
 
+from django.http import JsonResponse
 from django.views.generic import TemplateView
 from django.views.generic.base import ContextMixin
 from django.conf import settings
@@ -53,3 +54,15 @@ class IndexView(FlocTemplateView):
         context['counters'] = get_counters()
 
         return context
+
+
+def contact_form_submit(request):
+
+    if request.method == 'POST':
+        return JsonResponse(
+            {'response': 'success'}
+        )
+    else:
+        return JsonResponse(
+            {'response': 'error'}
+        )

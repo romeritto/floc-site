@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from .views import FlocTemplateView, IndexView
+from .views import FlocTemplateView, IndexView, contact_form_submit
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
@@ -36,6 +36,11 @@ urlpatterns = [
         r'^kontakt/$',
         FlocTemplateView.as_view(template_name='contact.html'),
         name='contact'
+    ),
+    url(
+        r'^kontakt/form-submit/$',
+        contact_form_submit,
+        name='contact-form-submit'
     ),
     url(r'^tinymce/', include('tinymce.urls')),
 ]

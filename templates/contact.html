@@ -74,42 +74,44 @@
 
                     <!-- CONTACT FORM -->
                     <div class="">
-                        <form id="contact-form" action="php/contact-form.php" method="POST">
+                        <form id="contact-form" action="{{ url('contact-form-submit') }}" method="POST">
+
+                            <input id="csrfmiddlewaretoken" class="form-control" type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
                             <div class="row">
                                 <div class="col-md-12 mb-30">
                                     <!-- <label>Your name *</label> -->
-                                    <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" placeholder="NAME" required>
+                                    <input type="text" value="" data-msg-required="Zadajte prosím vaše meno." maxlength="100" class="form-control" name="name" id="name" placeholder="MENO" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 mb-30">
                                     <!-- <label>Your email address *</label> -->
-                                    <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="EMAIL" required>
+                                    <input type="email" value="" data-msg-required="Zdajte prosím váš email." data-msg-email="Prosím vložte korektný email." maxlength="100" class="form-control" name="email" id="email" placeholder="EMAIL" required>
                                     </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 mb-40">
                                     <!-- <label>Message *</label> -->
-                                    <textarea maxlength="5000" data-msg-required="Please enter your message." rows="3" class="form-control" name="message" id="message" placeholder="MESSAGE" required></textarea>
+                                    <textarea maxlength="5000" data-msg-required="Napíšte prosím vašu správu." rows="3" class="form-control" name="message" id="message" placeholder="SPRÁVA" required></textarea>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 ">
-                                    <input type="submit" value="SEND MESSAGE" class="button medium gray" data-loading-text="Loading...">
+                                    <input type="submit" value="ODOSLAŤ SPRÁVU" class="button medium gray" data-loading-text="Odosielam...">
                                 </div>
                             </div>
 
                         </form>
                         <div class="alert alert-success hidden" id="contactSuccess">
-                            <strong>Success!</strong> Your message has been sent to us.
+                            <strong>Ďakujeme!</strong> Vaša správa bola odoslaná.
                         </div>
 
                         <div class="alert alert-danger hidden" id="contactError">
-                            <strong>Error!</strong> There was an error sending your message.
+                            <strong>Chyba!</strong> Správa nebola odoslaná. Skúste to znovu.
                         </div>
                     </div>
                 </div>
