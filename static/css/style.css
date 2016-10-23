@@ -2308,6 +2308,24 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   color:#4b4e53;
   font-weight:100;
 }
+.rotate {
+
+/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
 .count-title {
   font-size:14px;
 }

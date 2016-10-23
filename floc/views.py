@@ -32,15 +32,14 @@ class IndexView(FlocTemplateView):
         def get_counters():
 
             # 3 hours of work per week
-            hours_of_work = (
-                ((datetime.datetime.now() - settings.ESTABLISHMENT_DATE).days // 7) * 3
-            )
+            # hours_of_work = (
+            #    ((datetime.datetime.now() - settings.ESTABLISHMENT_DATE).days // 7) * 3
+            # )
 
             counters = {
                 'actors': Actor.objects.all().count(),
                 'shows': Show.objects.all().count(),
                 'plays': Play.objects.all().count(),
-                'hours': hours_of_work,
             }
 
             return counters
