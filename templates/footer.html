@@ -42,13 +42,11 @@
             </div>
 
             <div class="col-md-3 col-sm-3 widget">
-                <h4>ABOUT US</h4>
+                <h4>ODKAZY</h4>
                 <ul class="links-list a-text-cont" >
-                    <li><a href="about-us.html">COMPANY</a></li>
-                    <li><a href="services.html">WHAT WE DO</a></li>
-                    <li><a href="https://help.market.envato.com/hc/en-us">HELP CENTER</a></li>
-                    <li><a href="http://themeforest.net/legal/market">TERMS OF SERVICE</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="{{ settings.FB_PAGE_URL }}">NÁŠ FACEBOOK</a></li>
+                    <li><a href="http://regionhlohovec.sk/clanok-20_3-496/Empirove_divadlo.html">EMPÍROVÉ DIVADLO</a></li>
+                    <li><a href="http://www.mkchlohovec.sk">MESTSKÉ KULTÚRNE CENTRUM HLOHOVEC</a></li>
                 </ul>
             </div>
 
@@ -70,6 +68,7 @@
         </div>
 
         <!-- OUR SPONSORS -->
+        <!--
         <div class="row" >
             <div class="owl-clients-auto owl-carousel" >
                 <div class="item text-center"><img src="{{ static('images/clients/1.png') }}" alt="client"></div>
@@ -81,15 +80,13 @@
                 <div class="item text-center"><img src="{{ static('images/clients/7.png') }}" alt="client"></div>
             </div>
         </div>
+        -->
 
         <div class="footer-2-copy-cont clearfix">
             <!-- Social Links -->
             <div class="footer-2-soc-a right">
-                <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
-                <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Dribbble" target="_blank"><i class="fa fa-dribbble"></i></a>
+                <a href="{{ settings.FB_PAGE_URL }}" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/romeritto/floc-site/" title="Twitter" target="_blank"><i class="fa fa-github"></i></a>
             </div>
 
             <!-- Copyright -->

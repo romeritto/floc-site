@@ -171,6 +171,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'custom_elements': 'noindex',
 }
 
-# The date when theater was established
+# Custom settings
 
 ESTABLISHMENT_DATE = datetime.datetime(2015, 8, 8, 0, 0)
+FB_PAGE_URL = "https://www.facebook.com/Divadlo-FĽOČ-1077117319007228/"
