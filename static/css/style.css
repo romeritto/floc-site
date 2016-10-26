@@ -2719,7 +2719,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 /* #GMAPS 2 #NEW
 =====================================================*/
 #contact-map {
-  height: 600px;
+  height: 615px;
   position: relative;
   background-color: #eee !important;
   z-index: 1;
