@@ -59,7 +59,7 @@ class Actor(models.Model):
 
 
 class Quote(models.Model):
-    author = models.ForeignKey(Actor, verbose_name=u'autor')
+    author = models.ForeignKey(Actor, on_delete=models.CASCADE, verbose_name=u'autor')
     text = models.CharField(
         verbose_name=u'text',
         help_text=(

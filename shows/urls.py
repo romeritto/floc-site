@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from .views import ShowTemplateView
 
-
+app_name='shows'
 urlpatterns = [
-    url(r'^$', ShowTemplateView.as_view(), name='show-list'),
+    re_path(r'^$', ShowTemplateView.as_view(), name='show-list'),
 ]

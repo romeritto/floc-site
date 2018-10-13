@@ -25,6 +25,7 @@ class Blogpost(models.Model):
     )
     author = models.ForeignKey(
         Actor,
+        on_delete=models.PROTECT,
         verbose_name=u'autor',
         related_name='blogposts',
     )
@@ -40,6 +41,7 @@ class Blogpost(models.Model):
     )
     related_play = models.ForeignKey(
         Play,
+        on_delete=models.SET_NULL,
         verbose_name=u'pribuzná inscenácia',
         help_text=(u'Ak sa tento príspevok viaže k jednej z inscenácií, '
                    u'vyplňte toto pole'),

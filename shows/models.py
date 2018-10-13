@@ -10,6 +10,7 @@ class Show(models.Model):
     id = models.AutoField(primary_key=True)
     play = models.ForeignKey(
         Play,
+        on_delete=models.CASCADE,
         verbose_name=u'inscenácia',
         related_name='shows'
     )

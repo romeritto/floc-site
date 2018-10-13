@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from .views import ActorListView
 
-
+app_name='actors'
 urlpatterns = [
-    url(r'^$', ActorListView.as_view(), name='actor-list'),
+    re_path(r'^$', ActorListView.as_view(), name='actor-list'),
 ]

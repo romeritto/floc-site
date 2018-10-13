@@ -15,34 +15,33 @@ Including another URLconf
 """
 
 from django.conf import settings
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from django.contrib import admin
 
 from .views import FlocTemplateView, IndexView, contact_form_submit
 
 urlpatterns = [
-    url(r'^$', IndexView.as_view(), name='index'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^program/', include('shows.urls', namespace='shows')),
-    url(r'^blog/', include('blog.urls', namespace='blog')),
-    url(r'^inscenacie/', include('plays.urls', namespace='plays')),
-    url(r'^o-nas/herci/', include('actors.urls', namespace='actors')),
-    url(
+    re_path(r'^$', IndexView.as_view(), name='index'),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^program/', include('shows.urls')),
+    re_path(r'^blog/', include('blog.urls')),
+    re_path(r'^inscenacie/', include('plays.urls')),
+    re_path(r'^o-nas/herci/', include('actors.urls')),
+    re_path(
         r'^o-nas/historia/$',
         FlocTemplateView.as_view(template_name='history.html'),
         name='history'
     ),
-    url(
+    re_path(
         r'^kontakt/$',
         FlocTemplateView.as_view(template_name='contact.html'),
         name='contact'
     ),
-    url(
+    re_path(
         r'^kontakt/form-submit/$',
         contact_form_submit,
         name='contact-form-submit'
     ),
-    url(r'^tinymce/', include('tinymce.urls')),
 ]
 
 if settings.DEBUG:
@@ -51,5 +50,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        re_path(r'^__debug__/', include(debug_toolbar.urls)),
     ]

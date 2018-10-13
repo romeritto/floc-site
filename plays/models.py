@@ -21,6 +21,7 @@ class Play(models.Model):
     author = models.CharField(verbose_name=u'autor', max_length=255)
     director = models.ForeignKey(
         Actor,
+        on_delete=models.PROTECT,
         verbose_name=u'režisér',
         related_name='directed_shows',
     )
@@ -76,7 +77,7 @@ class Play(models.Model):
 
 class PlayImage(models.Model):
     id = models.AutoField(primary_key=True)
-    play = models.ForeignKey(Play, verbose_name='herec', related_name='gallery')
+    play = models.ForeignKey(Play, on_delete=models.CASCADE, verbose_name='inscenácia', related_name='gallery')
     image = ResizedImageField(
         verbose_name=u'Fotka',
         help_text=(
@@ -97,8 +98,8 @@ class PlayImage(models.Model):
 
 
 class PlayCharacter(models.Model):
-    play = models.ForeignKey(Play, verbose_name='hra')
-    actor = models.ForeignKey(Actor, verbose_name='herec')
+    play = models.ForeignKey(Play, on_delete=models.CASCADE, verbose_name='hra')
+    actor = models.ForeignKey(Actor, on_delete=models.CASCADE, verbose_name='herec')
     name = models.CharField(
         verbose_name=u'Meno postavy',
         max_length=255,
